@@ -1,0 +1,9 @@
+﻿fastapi
+uvicorn
+SQLAlchemy==2.0.32
+asyncpg==0.29.0
+python-jose==3.3.0
+passlib[bcrypt]==1.7.4
+pydantic==2.8.2
+pydantic-settings==2.4.0
+email-validator
