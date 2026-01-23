@@ -1,7 +1,7 @@
 import uuid
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-
+import anyio
 from app.db import async_session_maker
 from app import crud
 from app.crud_jobs import set_job_status
@@ -35,11 +35,18 @@ async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: u
 
             await set_job_status(db, job_id, status="running", progress=20)
 
-            # Generate doc with TWO sample OpenAI calls inside
-            doc_md = generate_requirements_doc(
-                chat_context=ctx_obj,
-                rolling_summary=(summary_row.summary if summary_row else ""),
-                messages=[{"role": m.role, "content": m.content} for m in reversed(messages)],  # oldest->newest
+            # # Generate doc with TWO sample OpenAI calls inside
+            # doc_md = generate_requirements_doc(
+            #     chat_context=ctx_obj,
+            #     rolling_summary=(summary_row.summary if summary_row else ""),
+            #     messages=[{"role": m.role, "content": m.content} for m in reversed(messages)],  # oldest->newest
+            # )
+            payload_messages = [{"role": m.role, "content": m.content} for m in reversed(messages)]  # oldest->newest
+            doc_md = await anyio.to_thread.run_sync(
+                generate_requirements_doc,
+                ctx_obj,
+                (summary_row.summary if summary_row else ""),
+                payload_messages,
             )
 
             await set_job_status(db, job_id, status="running", progress=85)
