@@ -1,0 +1,66 @@
+{
+  "discovery": [
+    "Approved primary stack for custom build with a shared backend: React Native (Student v1 mobile) + Next.js (Instructor/Admin web) + NestJS API + PostgreSQL + Stripe (subs + one-off) + Stripe Connect (instructor payouts) + S3/CDN (media) + Redis + BullMQ (jobs) + Clerk/Auth0 (auth + RBAC) + Postmark/SendGrid (email).",
+    "Fallback option if time/scope constraints: Platform LMS (Thinkific/Teachable) with light custom web/admin and minimal mobile companion.",
+    "Budget confirmed at $50k–$80k with an 8-month launch target.",
+    "Preference for a custom long-term solution over platform limitations.",
+    "The platform will include an AI learning assistant integrated into both web and mobile applications.",
+    "The application should be available on both iOS and Android to allow users to learn anytime and anywhere.",
+    "The monetization strategy is hybrid: platform subscriptions (monthly and annual) and one-off course purchases.",
+    "Instructor payouts are driven by enrollment counts.",
+    "Monetization structure includes products and access (entitlements), payments and revenue events, instructor payout model, and admin controls."
+  ],
+  "ui_ux": [
+    "Student-only mobile app for v1, while maintaining instructors and admin access via web.",
+    "UI should be modern and smooth. Visual details will be handled by a UI expert.",
+    "Backend-impacting screens include: Public (Landing/marketing, course catalog/search, course detail page, pricing, checkout), Auth (Sign up/in, forgot password, email verification), Student (Dashboard, my courses/library, course player, progress & history, certificates, profile/billing), Instructor (Instructor dashboard, course builder, enrollments/analytics, payouts, profile/verification), Admin (User & role management, course approval/moderation, subscriptions/orders/refunds, payout controls, platform settings, reports).",
+    "Consideration for subscription options presented on the course page: whether to show both 'Subscribe' and 'Buy this course' side-by-side or prioritize one option.",
+    "Web-first responsive design with a potential mobile app later."
+  ],
+  "features_journeys": [
+    "V1 scope includes phased rollout: student-only mobile app and web application for instructors and admins.",
+    "Requirement for both web and mobile apps to be ready at launch.",
+    "Focus on core student mobile flows initially: browse, purchase, course player, progress, certificates, billing.",
+    "Instructor and admin remain web-first at launch.",
+    "The AI learning assistant should be integrated as a separate service within the backend, possibly using OpenAI or Anthropic.",
+    "The mobile application should support learning on both iOS and Android.",
+    "Core features implied by screens: Role-based access control, Catalog + search/filtering, Payments (subscriptions and one-off purchases), Entitlements, Course delivery (video/file hosting integration, lesson completion tracking), Certificates generation and verification, Instructor payout ledger tied to enrollments, Notifications (email for receipts, enrollment, certificate, payout events).",
+    "Subscription plans include Monthly and Annual, granting access to a defined catalog scope.",
+    "Course purchases grant perpetual or time-limited access to specific courses.",
+    "Entitlements system to check user access to specific courses.",
+    "Every transaction treated as a ledgered event: subscription invoices/renewals, one-off payments, refunds/chargebacks.",
+    "Instructor payouts include per enrollment for one-off purchases and subscription payouts attributed to enrollments during billing periods.",
+    "Admin controls include defining subscription-eligible courses, setting instructor revenue share defaults/per-instructor overrides, managing payout schedules, and enrollment verification rules.",
+    "Platform is designed for multiple instructors, role-based with centralized admin, and aims for scalability."
+  ],
+  "tech_stack": [
+    "Primary (recommended) tech stack: Custom build with shared backend.",
+    "Mobile (Student v1): React Native with TypeScript.",
+    "Web (Instructor/Admin): Next.js with TypeScript.",
+    "API: NestJS with TypeScript.",
+    "Database: PostgreSQL.",
+    "Auth/RBAC: Clerk or Auth0 with 3 fixed roles.",
+    "Payments: Stripe for subscriptions and one-off payments, Stripe Connect for instructor payouts.",
+    "Content delivery: S3-compatible object storage and CDN (CloudFront).",
+    "Jobs and notifications: Redis and BullMQ for asynchronous tasks (e.g., certificate issuance, emails, payout ledger tasks).",
+    "Email: Postmark/SendGrid.",
+    "Custom stack confirmed: Next.js (TypeScript) for web, NestJS (TypeScript) for backend API, PostgreSQL for DB, Stripe (Subscriptions and one-off) + Stripe Connect for payments, S3-compatible storage + CloudFront, Redis + BullMQ for async tasks, Clerk/Auth0 for authentication/RBAC, SendGrid/Postmark for email.",
+    "Mobile app to use React Native accessing the same API.",
+    "Proposed tech stack includes Next.js for web, React Native for mobile, and NestJS for backend API.",
+    "Database: PostgreSQL, possibly managed by Supabase or AWS RDS.",
+    "Auth0 or Clerk for authentication and role-based access control.",
+    "Payments through Stripe, with instructor payouts managed via Stripe Connect.",
+    "S3-compatible storage for content streaming with CloudFront CDN.",
+    "Background jobs managed by BullMQ and Redis.",
+    "Notifications handled via Postmark or SendGrid and Firebase Cloud Messaging/APNs for push notifications.",
+    "AI learning assistant potentially using OpenAI or Anthropic APIs."
+  ],
+  "budget_timeline": [
+    "Reiterated requirement to fit within a $50k–$80k budget and achieve launch in 8 months.",
+    "Budget is confirmed at $50k–$80k with a target launch timeframe of 8 months."
+  ],
+  "open_questions": [
+    "Decision needed on whether mobile apps should have full parity for instructor/admin roles or if it’s acceptable for student-only mobile on v1.",
+    "Do students subscribe to the entire platform (one subscription unlocks eligible courses), or do they subscribe to individual teachers/courses (multiple subscriptions possible)?"
+  ]
+}

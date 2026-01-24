@@ -34,6 +34,7 @@ async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: u
             }
 
             await set_job_status(db, job_id, status="running", progress=20)
+            
 
             # # Generate doc with TWO sample OpenAI calls inside
             # doc_md = generate_requirements_doc(
@@ -41,13 +42,27 @@ async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: u
             #     rolling_summary=(summary_row.summary if summary_row else ""),
             #     messages=[{"role": m.role, "content": m.content} for m in reversed(messages)],  # oldest->newest
             # )
+            ###############
+            # payload_messages = [{"role": m.role, "content": m.content} for m in reversed(messages)]  # oldest->newest
+            # doc_md = await anyio.to_thread.run_sync(
+            #     generate_requirements_doc,
+            #     ctx_obj,
+            #     (summary_row.summary if summary_row else ""),
+            #     payload_messages,
+            # )
+            
             payload_messages = [{"role": m.role, "content": m.content} for m in reversed(messages)]  # oldest->newest
-            doc_md = await anyio.to_thread.run_sync(
-                generate_requirements_doc,
-                ctx_obj,
-                (summary_row.summary if summary_row else ""),
-                payload_messages,
+
+            doc_md = await generate_requirements_doc(
+                job_id=str(job_id),
+                chat_context=ctx_obj,
+                rolling_summary=(summary_row.summary if summary_row else ""),
+                messages=payload_messages,
             )
+
+            
+         
+
 
             await set_job_status(db, job_id, status="running", progress=85)
 
@@ -60,6 +75,7 @@ async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: u
                 "✅ Your requirement document is ready. You can open it from the Requirements tab.",
                 meta={"artifact": ARTIFACT_TYPE}
             )
+            
 
             await set_job_status(db, job_id, status="done", progress=100)
 

@@ -1,0 +1,1 @@
+- Should subscriptions unlock all courses on the platform, or only a subscription catalog?

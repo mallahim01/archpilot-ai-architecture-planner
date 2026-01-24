@@ -1,0 +1,18 @@
+- Final approval granted for the primary custom tech stack: Next.js, NestJS, Postgres, Stripe, Supabase Auth/Auth0, S3 + CloudFront/Mux/Vimeo, React Native (Expo).
+- Fallback tech stack is WordPress + LearnDash + Stripe.
+- Standard web+app platform for both desktop and mobile users confirmed.
+- React Native (Expo) is preferred for iOS + Android due to budget and timeline constraints.
+- Custom API-first approach with shared types recommended for the stack.
+- Emphasis on using a single backend for both web and mobile clients.
+- Managed services suggested for handling multi-instructor, hybrid monetization, and payouts.
+- Roles are defined as Admin, Student, and Instructor.
+- Admin role includes complete control and platform oversight.
+- Admin tasks include managing users, courses, monetization, entitlements, and payouts.
+- Student actions include browsing catalogs, purchasing subscriptions or courses, accessing courses, tracking progress, and obtaining certificates.
+- Instructor actions include creating and publishing courses, viewing aggregated analytics, and managing payouts.
+- Initial monetization design confirmed: subscription unlocks complete access to all courses as an 'all-access pass'.
+- Flexible data model to support future addition of individual course purchases without redesign.
+- Monetization: hybrid model supporting monthly and annual subscriptions, along with individual course purchases (lifetime access default unless specified otherwise).
+- Instructor payouts based on enrollment counts per course and payout period, with admin-approved payout runs.
+- Building a role-based online teaching and learning platform designed to connect teachers and students through structured digital courses.
+- The platform will support course creation, subscription-based access, learning progress tracking, certifications, and payouts.

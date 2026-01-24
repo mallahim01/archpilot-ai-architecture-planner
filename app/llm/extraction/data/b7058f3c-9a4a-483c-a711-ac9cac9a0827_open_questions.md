@@ -1,0 +1,2 @@
+- Does the user have any tech stack preferences such as AWS vs GCP, Stripe, React/Next.js, etc., or should the recommendation be made by developers?
+- Clarification needed on whether a user with an active subscription gets access to all courses or only a subset with some courses remaining pay-per-course.

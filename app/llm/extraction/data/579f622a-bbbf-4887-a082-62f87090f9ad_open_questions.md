@@ -1,0 +1,3 @@
+- Confirmation is needed on whether there are any hard 'native-only' requirements or if a standard streaming + progress + certificates app is sufficient.
+- Question regarding preference for avoiding custom development and using a platform like WordPress versus a custom build.
+- When a user has an active subscription, should they get access to all courses or only a subset?

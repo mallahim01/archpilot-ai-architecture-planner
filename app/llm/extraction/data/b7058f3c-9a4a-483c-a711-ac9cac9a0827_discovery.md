@@ -1,0 +1,13 @@
+- Custom stack confirmed as the primary approach: Next.js (Web), NestJS (API), Postgres (DB), Stripe (Payments/Billing), Supabase Auth or Auth0 (Auth), S3 + CloudFront for Storage/Delivery, React Native (Expo) for Mobile.
+- Fallback plan: WordPress + LearnDash + Stripe if needed to compress scope or time.
+- Standard web and mobile platform for desktop and mobile users
+- React Native (Expo) recommended for iOS and Android within $25k–$50k budget and 4-month timeline
+- Primary tech stack: Custom API-first design with a shared codebase for web and mobile
+- User needs both a web and mobile app to be developed.
+- Preference for custom build on a managed LMS/e-commerce backbone to support multi-instructor, hybrid monetization, and payout features.
+- Initial monetization includes a subscription model that unlocks access to all courses, described as an 'all-access pass.'
+- The data model is flexible enough to add individual course purchases in the future without redesign.
+- Subscription model to unlock all courses initially, with options for monthly and annual subscriptions as well as individual course purchases.
+- Instructor payouts to be based on enrollment counts.
+- The platform is a role-based online teaching and learning platform designed to connect teachers and students through structured digital courses.
+- Goal: Create a scalable, production-ready education platform that supports multiple instructors, a growing student base, and monetization from day one.

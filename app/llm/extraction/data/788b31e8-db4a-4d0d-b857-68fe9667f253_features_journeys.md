@@ -1,0 +1,13 @@
+- Ensure subscription lifecycle management, RBAC, course publishing, progress tracking, certifications, and enrollment-based payouts are implemented without plugin constraints in the custom build.
+- Month 1 aims to establish RBAC for Admin, Student, Instructor roles, as well as course model and publishing workflow.
+- Monthly and annual subscription plans to be set in Month 1, along with payments and webhooks.
+- Core admin management to be established in Month 1.
+- Month 2 will focus on learning experience, including catalog and search/filter, checkout process, student dashboard, course player, and progress tracking.
+- Month 3 will concentrate on monetization and payouts, including subscription lifecycle management, instructor earnings calculations, payout cycles, and basic reporting.
+- Month 4 will deal with hardening and launch preparation including QA, security measures, analytics, audit logs, support flows, and production readiness.
+- Assumed launch features: web-first, Stripe for payments, all-access subscriptions, English-first interface, and lightweight certificate generator.
+- Initial launch subscriptions (monthly/annual) unlock access to all courses (all-access pass). Individual course purchases as a later/optional phase.
+- Core features for MVP include: Subscription lifecycle (trial/upgrade/cancel/renew), Role-based access (student/instructor/admin), Course creation and publishing workflow, Enrollment and progress tracking, Certificates issuance, Payout calculations based on enrollments, Admin-managed payout cycles, Notifications (email receipts, renewal/cancellation, payout notices).
+- Student Experience: browse, subscribe/enroll, learn through lessons/modules, take assessments, earn certificates, manage profile and learning history.
+- Instructor Experience: create and manage courses, upload content, view student progress, check earnings and payout status.
+- Admin System: manage users/roles, approve courses/instructors, manage subscriptions/plans, reconcile payouts, generate reports, handle refunds/disputes, enforce content policy.

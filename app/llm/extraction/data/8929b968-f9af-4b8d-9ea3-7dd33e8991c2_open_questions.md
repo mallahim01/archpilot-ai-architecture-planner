@@ -1,0 +1,6 @@
+- Do you have any hard 'native-only' requirements such as offline-first lessons, strict DRM, or heavy background playback?
+- Confirm if the preference is for React Native for a cross-platform mobile app or if native iOS/Android builds are required.
+- Confirm if there is any preference to avoid custom development in favor of platforms like WordPress, or if the custom build is acceptable.
+- Confirm if instructors will be allowed to view individual student progress details under certain conditions.
+- Does a subscription give access to all courses or just a subset, with others remaining pay-per-course?
+- Should students pay via (A) platform-level subscription giving access to a catalog, (B) per-course purchases, or (C) both?

@@ -1,0 +1,2 @@
+- Budget confirmed to be between $25–50k with a 4-month MVP timeline.
+- Budget range targeting $20-60k.

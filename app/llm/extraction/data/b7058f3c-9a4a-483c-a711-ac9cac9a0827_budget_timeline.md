@@ -1,0 +1,2 @@
+- Budget confirmed at $25k-$50k, timeline at 4 months.
+- Reaffirmed budget of $25k–$50k and a timeline of approximately 4 months.

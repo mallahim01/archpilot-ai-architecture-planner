@@ -1,0 +1,5 @@
+- Confirmed and locked custom stack as primary: Web (Next.js), API (NestJS), Database (Postgres), Payments/Billing (Stripe for subscriptions, one-off payments, invoices), Auth (Supabase Auth or Auth0), Storage/Delivery (S3 + CloudFront, optionally Mux/Vimeo for video), Mobile (React Native with Expo).
+- Fallback stack: WordPress + LearnDash + Stripe.
+- Primary custom stack includes React Native (Expo) for mobile.
+- Primary stack recommendation: Next.js for the web app (student, instructor, admin), Node.js (NestJS) or serverless (AWS Lambda) for backend/API, PostgreSQL (Supabase or AWS RDS) as the database, Supabase Auth or Auth0 for auth and RBAC, Stripe for payments/subscriptions, S3 + CloudFront or Mux/Vimeo for content storage/streaming, Postmark/SendGrid for email/notifications, Retool or lightweight internal admin in Next.js for admin tools.
+- Fallback stack: WordPress with LearnDash and Stripe add-ons.

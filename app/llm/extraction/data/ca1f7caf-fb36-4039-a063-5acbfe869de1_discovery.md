@@ -1,0 +1,13 @@
+- Require a hybrid-monetized multi-instructor LMS/marketplace with monthly/annual all-access subscriptions plus optional single-course purchases later.
+- Budget is between $25–50k.
+- Project timeline is set for a 4-month MVP launch.
+- 4-month launch timeline for MVP if scope is kept tight and shipped in phases.
+- Month 1 focuses on RBAC, course model, subscription plans, payments, and core admin management.
+- Month 2 involves catalog/search, checkout, student dashboard, course player, and email notifications.
+- Month 3 includes subscription lifecycle, enrollment events, instructor earnings, and payout cycles.
+- Month 4 focuses on QA, security, analytics, audit logs, support flows, performance, legal pages, and production readiness.
+- Platform will start with 3 roles: Admin, Student, Instructor (Teacher).
+- Backend-relevant screens needed: Public (landing, course catalog/preview, pricing, checkout), Auth (sign up/in, forgot password), Student (dashboard, course player, progress, certificates, billing/subscription management), Instructor (instructor dashboard, course builder/manager, enrollment stats, payout/earnings view), Admin (user/instructor management, course moderation, subscription plan config, payout cycle management, reporting).
+- Building a multi-instructor, role-based learning platform (LMS + marketplace) with subscriptions, progress tracking, certificates, payouts, and a centralized admin.
+- The platform is designed to be scalable and monetized from day one.
+- Target audience includes multiple instructors and a growing student base.

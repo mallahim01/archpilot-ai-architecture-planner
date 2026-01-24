@@ -1,0 +1,10 @@
+- The project will focus on a web-only launch initially.
+- UI/UX phase delivery approach: Month 1 - Foundation including RBAC and subscription plans; Month 2 - Learning experience including catalog, search/filter, checkout, and progress tracking; Month 3 - Monetization including earnings calculation and payout cycles; Month 4 - Hardening, QA, and production readiness.
+- Backend-relevant screens implied:
+- Public: landing, course catalog/preview, pricing, checkout
+- Auth: sign up/in, forgot password
+- Student: dashboard, course player, progress, certificates, billing/subscription management
+- Instructor: instructor dashboard, course builder/manager, enrollment stats, payout/earnings view
+- Admin: user/instructor management, course moderation, subscription plan config, payout cycle management, reporting
+- Web-first product with a responsive design, and an optional mobile app planned for later.
+- Subscriptions should unlock all courses on the platform.

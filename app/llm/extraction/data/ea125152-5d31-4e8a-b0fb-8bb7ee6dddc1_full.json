@@ -1,0 +1,57 @@
+{
+  "discovery": [
+    "Requirement document is ready and can be opened from the Requirements tab.",
+    "Approved Primary tech stack: Next.js (web) + NestJS API + Postgres + Prisma + Clerk/Auth0 + Stripe Billing, with S3, Mux/Cloudflare Stream, Postmark.",
+    "Fallback option: WordPress + LearnDash/LifterLMS + Stripe add-ons with a small custom payouts service.",
+    "Budget: $25–50k.",
+    "Timeline: 4-month MVP target.",
+    "Focus on subscription lifecycle, RBAC, instructor earnings/payout logic.",
+    "The user confirmed their budget is $25k to $50k with no preferred stack.",
+    "The system is confirmed as web-only.",
+    "Platform will run with 3 roles for MVP: Admin, Student, Instructor (Teacher).",
+    "Initial launch involves subscriptions (monthly/annual) unlocking access to all courses (all-access pass).",
+    "Individual course purchases planned as a later/optional phase.",
+    "Users can buy individual courses as a one-time purchase.",
+    "Instructor payouts can be implemented as a fixed amount per enrollment or a revenue-share per enrollment.",
+    "Subscriptions unlock a defined catalog (or all courses), while a la carte purchases permanently unlock specific courses.",
+    "Payouts are calculated monthly, with an admin-approved payout run.",
+    "Role-based online teaching and learning platform to connect teachers and students through structured digital courses.",
+    "Platform supports course creation, subscription-based access, learning progress tracking, certifications, and payouts.",
+    "Objective is to create a scalable, production-ready education platform supporting multiple instructors and a growing student base."
+  ],
+  "ui_ux": [
+    "The project will focus on a web-only launch initially.",
+    "UI/UX phase delivery approach: Month 1 - Foundation including RBAC and subscription plans; Month 2 - Learning experience including catalog, search/filter, checkout, and progress tracking; Month 3 - Monetization including earnings calculation and payout cycles; Month 4 - Hardening, QA, and production readiness.",
+    "Backend-relevant screens implied:\n- Public: landing, course catalog/preview, pricing, checkout\n- Auth: sign up/in, forgot password\n- Student: dashboard, course player, progress, certificates, billing/subscription management\n- Instructor: instructor dashboard, course builder/manager, enrollment stats, payout/earnings view\n- Admin: user/instructor management, course moderation, subscription plan config, payout cycle management, reporting",
+    "Web-first product with a responsive design, and an optional mobile app planned for later.",
+    "Subscriptions should unlock all courses on the platform."
+  ],
+  "features_journeys": [
+    "Month 1 focus: RBAC for Admin/Student/Instructor, course model, publishing workflow, subscription plans, payments, and core admin management.",
+    "Month 2 focus: catalog, search/filter, checkout, student dashboard, course player, progress tracking, and email notifications.",
+    "Month 3 focus: subscription lifecycle (renew/cancel/grace), enrollment events, instructor earnings calculations, payout cycles, and basic reporting.",
+    "Month 4 focus: QA, security features, analytics, audit logs, support flows, performance, legal pages, and production readiness.",
+    "Focus on English-first and a lightweight certificate generator.",
+    "Role-based access for students, instructors, and admins.",
+    "Core features for MVP:\n- Subscription lifecycle management (trial, upgrade, cancel, renew)\n- Role-based access control\n- Course creation and publishing workflow\n- Enrollment, progress tracking, and certificates\n- Payout calculations based on enrollments with admin-managed payout runs\n- Notifications such as email receipts, renewals, and cancellations",
+    "Student experience includes browsing, subscribing/enrolling, learning, assessments, receiving certificates, and viewing profile & learning history.",
+    "Instructor experience includes creating/managing courses, uploading content, viewing student progress, and checking earnings/payout status.",
+    "Admin system includes user role management, course/instructor approvals, subscription/plan management, payouts reconciliation, reporting, refunds/disputes handling, and content policy moderation."
+  ],
+  "tech_stack": [
+    "Primary stack: Next.js (Vercel), NestJS (Render/Fly), Postgres (managed) + Prisma, Clerk/Auth0, Stripe Billing, S3, Mux/Cloudflare Stream, Postmark.",
+    "Fallback stack: WordPress + LearnDash/LifterLMS + Stripe add-ons.",
+    "Preferred tech stack reiterated as: Frontend - Next.js + Tailwind; Backend - NestJS REST API; DB - Postgres + Prisma ORM; Auth - Auth0 or Clerk; Payments - Stripe Billing + Stripe Connect; Storage - S3 (AWS) + Mux; Email - Postmark; Infra - Vercel (frontend) + Render/Fly.io (API) + managed Postgres.",
+    "Fallback: WordPress with LearnDash/LifterLMS + Stripe add-ons."
+  ],
+  "budget_timeline": [
+    "Budget confirmed to be $25–50k.",
+    "Timeline confirmed to be 4-month MVP target.",
+    "MVP delivery approach detailed for each month, along with specific features planned for each phase."
+  ],
+  "open_questions": [
+    "Confirmation needed whether single-course purchase is desired at launch or can be deferred to a later phase.",
+    "Confirmation for assuming the product is English-first.",
+    "Are subscriptions paid to the platform with revenue-share/payout to instructors, or does each instructor get paid directly with a platform fee on top?"
+  ]
+}

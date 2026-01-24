@@ -1,0 +1,3 @@
+- Confirmation needed whether single-course purchase is desired at launch or can be deferred to a later phase.
+- Confirmation for assuming the product is English-first.
+- Are subscriptions paid to the platform with revenue-share/payout to instructors, or does each instructor get paid directly with a platform fee on top?

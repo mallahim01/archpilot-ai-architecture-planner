@@ -1,0 +1,14 @@
+- Should checkout allow guest checkout, or require account sign-in? Current default is account-required.
+- Do you want the storefront to prioritize (A) editorial discovery or (B) fast conversion?
+- Open assumption: Guest checkout allowed, needs confirmation.
+- Refunds assumed to be handled in Stripe Dashboard - clarification needed if UI changes are needed.
+- Are there any compliance/security requirements to include, or should standard best practices be assumed?
+- Decision needed on backend architecture: single Next.js API or separate service layer.
+- Assumption: allow guest browsing but require login at checkout. Need confirmation.
+- UI-direction question resolved: custom in-app checkout UI preferred over fully hosted Stripe Checkout.
+- Approval requested for Next.js + AWS managed services as the primary stack option.
+- Should Staff be allowed to manage catalog/inventory, or should it remain Admin-only?
+- Preferred cloud/runtime for backend architecture: AWS, GCP, Vercel, or default to a managed stack?
+- Decision required on whether to include sales tax based on customer address or keep the pricing as 'price + $15 shipping' only.
+- Clarification needed: Are subscriptions, digital products, or services bookings relevant?
+- Are multi-location inventory and specific integrations required?

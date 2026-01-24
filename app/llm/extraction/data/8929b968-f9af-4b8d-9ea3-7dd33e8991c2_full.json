@@ -1,0 +1,61 @@
+{
+  "discovery": [
+    "Final approval granted for the primary custom tech stack: Next.js, NestJS, Postgres, Stripe, Supabase Auth/Auth0, S3 + CloudFront/Mux/Vimeo, React Native (Expo).",
+    "Fallback tech stack is WordPress + LearnDash + Stripe.",
+    "Standard web+app platform for both desktop and mobile users confirmed.",
+    "React Native (Expo) is preferred for iOS + Android due to budget and timeline constraints.",
+    "Custom API-first approach with shared types recommended for the stack.",
+    "Emphasis on using a single backend for both web and mobile clients.",
+    "Managed services suggested for handling multi-instructor, hybrid monetization, and payouts.",
+    "Roles are defined as Admin, Student, and Instructor.",
+    "Admin role includes complete control and platform oversight.",
+    "Admin tasks include managing users, courses, monetization, entitlements, and payouts.",
+    "Student actions include browsing catalogs, purchasing subscriptions or courses, accessing courses, tracking progress, and obtaining certificates.",
+    "Instructor actions include creating and publishing courses, viewing aggregated analytics, and managing payouts.",
+    "Initial monetization design confirmed: subscription unlocks complete access to all courses as an 'all-access pass'.",
+    "Flexible data model to support future addition of individual course purchases without redesign.",
+    "Monetization: hybrid model supporting monthly and annual subscriptions, along with individual course purchases (lifetime access default unless specified otherwise).",
+    "Instructor payouts based on enrollment counts per course and payout period, with admin-approved payout runs.",
+    "Building a role-based online teaching and learning platform designed to connect teachers and students through structured digital courses.",
+    "The platform will support course creation, subscription-based access, learning progress tracking, certifications, and payouts."
+  ],
+  "ui_ux": [
+    "Approval to generate the final requirement document including features, journeys, and tech stack.",
+    "React Native fits LMS apps with features like auth, catalog, course player UI, progress tracking, downloads, and push notifications.",
+    "Key screens/pages implied that impact backend: Public (Landing, course catalog/browse, course detail, pricing), Auth (signup/login, verify email, forgot password), Student (dashboard/enrollments and progress, course player, certificates, billing/subscription), Instructor (dashboard, course builder/manage, analytics/enrollments, payout history), Admin (manage users/roles, courses/moderation, subscription plans, payouts, reports).",
+    "Role-based access for student, instructor, admin.",
+    "Centralized admin system for platform management."
+  ],
+  "features_journeys": [
+    "Custom app with managed services recommended for supporting subscriptions, one-off purchases, entitlement logic, and enrollment-based instructor payouts.",
+    "Fallback option includes WordPress with LearnDash and Stripe for a quicker launch but with less flexibility in terms of instructor payout rules, hybrid monetization, and maintainability.",
+    "Admin dashboard entry point for managing platform activities.",
+    "Student dashboard entry point for accessing courses and managing subscriptions.",
+    "Instructor dashboard entry point for course creation and analytics.",
+    "Admin can manage courses & content, configure monetization options, and export reports.",
+    "Admin can override access grants, view and run payout cycles.",
+    "Students can resume course progress, manage billing, and share certificates.",
+    "Instructors can manage course content, view aggregated learner analytics, and see payout history.",
+    "Core features: Role-based access, subscription lifecycle and entitlements, course delivery, progress tracking, certificate issuance.",
+    "Instructor payout calculations based on enrollments per period, with admin payout runs.",
+    "Scalable and auditable payments layer structured around products, entitlements, ledger events, and payout cycles.",
+    "The platform will support multiple instructors and a growing student base.",
+    "Monetization will be available from day one, with options for subscription-based access."
+  ],
+  "tech_stack": [
+    "Confirmed and locked custom stack as primary: Web (Next.js), API (NestJS), Database (Postgres), Payments/Billing (Stripe for subscriptions, one-off payments, invoices), Auth (Supabase Auth or Auth0), Storage/Delivery (S3 + CloudFront, optionally Mux/Vimeo for video), Mobile (React Native with Expo).",
+    "Fallback stack: WordPress + LearnDash + Stripe.",
+    "Primary custom stack includes React Native (Expo) for mobile.",
+    "Primary stack recommendation: Next.js for the web app (student, instructor, admin), Node.js (NestJS) or serverless (AWS Lambda) for backend/API, PostgreSQL (Supabase or AWS RDS) as the database, Supabase Auth or Auth0 for auth and RBAC, Stripe for payments/subscriptions, S3 + CloudFront or Mux/Vimeo for content storage/streaming, Postmark/SendGrid for email/notifications, Retool or lightweight internal admin in Next.js for admin tools.",
+    "Fallback stack: WordPress with LearnDash and Stripe add-ons."
+  ],
+  "budget_timeline": [],
+  "open_questions": [
+    "Do you have any hard 'native-only' requirements such as offline-first lessons, strict DRM, or heavy background playback?",
+    "Confirm if the preference is for React Native for a cross-platform mobile app or if native iOS/Android builds are required.",
+    "Confirm if there is any preference to avoid custom development in favor of platforms like WordPress, or if the custom build is acceptable.",
+    "Confirm if instructors will be allowed to view individual student progress details under certain conditions.",
+    "Does a subscription give access to all courses or just a subset, with others remaining pay-per-course?",
+    "Should students pay via (A) platform-level subscription giving access to a catalog, (B) per-course purchases, or (C) both?"
+  ]
+}

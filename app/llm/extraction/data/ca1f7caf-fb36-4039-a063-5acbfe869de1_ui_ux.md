@@ -1,0 +1,9 @@
+- Recommended UI/experience includes catalog browsing, search/filter, checkout flow, student and instructor dashboards.
+- Certificate generation mentioned as lightweight, potentially included.
+- Monetization as a hybrid model: Monthly + Annual subscriptions for platform-level access, and users can buy individual courses (one-time purchase).
+- UI question: should subscriptions unlock all courses on the platform or only a subscription catalog with some courses excluded?
+- Subscription lifecycle includes trial, upgrade, cancel, renew processes.
+- Web-first product (responsive), with optional mobile app later.
+- High-level scope for student experience: browse, subscribe/enroll, learn (lessons/modules), assessments, certificate, profile & learning history.
+- High-level scope for instructor experience: create/manage courses, upload content, view student progress, earnings/payout status.
+- Admin system functions: manage users/roles, approve courses/instructors, manage subscriptions/plans, payouts reconciliation, reports, refunds/disputes, content policy.

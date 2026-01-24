@@ -1,0 +1,9 @@
+- Approved primary stack for custom build with a shared backend: React Native (Student v1 mobile) + Next.js (Instructor/Admin web) + NestJS API + PostgreSQL + Stripe (subs + one-off) + Stripe Connect (instructor payouts) + S3/CDN (media) + Redis + BullMQ (jobs) + Clerk/Auth0 (auth + RBAC) + Postmark/SendGrid (email).
+- Fallback option if time/scope constraints: Platform LMS (Thinkific/Teachable) with light custom web/admin and minimal mobile companion.
+- Budget confirmed at $50k–$80k with an 8-month launch target.
+- Preference for a custom long-term solution over platform limitations.
+- The platform will include an AI learning assistant integrated into both web and mobile applications.
+- The application should be available on both iOS and Android to allow users to learn anytime and anywhere.
+- The monetization strategy is hybrid: platform subscriptions (monthly and annual) and one-off course purchases.
+- Instructor payouts are driven by enrollment counts.
+- Monetization structure includes products and access (entitlements), payments and revenue events, instructor payout model, and admin controls.

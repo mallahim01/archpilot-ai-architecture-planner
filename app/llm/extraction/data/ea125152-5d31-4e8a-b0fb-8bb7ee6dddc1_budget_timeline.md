@@ -1,0 +1,3 @@
+- Budget confirmed to be $25–50k.
+- Timeline confirmed to be 4-month MVP target.
+- MVP delivery approach detailed for each month, along with specific features planned for each phase.

@@ -1,0 +1,16 @@
+- Month 1 focus: RBAC for Admin/Student/Instructor, course model, publishing workflow, subscription plans, payments, and core admin management.
+- Month 2 focus: catalog, search/filter, checkout, student dashboard, course player, progress tracking, and email notifications.
+- Month 3 focus: subscription lifecycle (renew/cancel/grace), enrollment events, instructor earnings calculations, payout cycles, and basic reporting.
+- Month 4 focus: QA, security features, analytics, audit logs, support flows, performance, legal pages, and production readiness.
+- Focus on English-first and a lightweight certificate generator.
+- Role-based access for students, instructors, and admins.
+- Core features for MVP:
+- Subscription lifecycle management (trial, upgrade, cancel, renew)
+- Role-based access control
+- Course creation and publishing workflow
+- Enrollment, progress tracking, and certificates
+- Payout calculations based on enrollments with admin-managed payout runs
+- Notifications such as email receipts, renewals, and cancellations
+- Student experience includes browsing, subscribing/enrolling, learning, assessments, receiving certificates, and viewing profile & learning history.
+- Instructor experience includes creating/managing courses, uploading content, viewing student progress, and checking earnings/payout status.
+- Admin system includes user role management, course/instructor approvals, subscription/plan management, payouts reconciliation, reporting, refunds/disputes handling, and content policy moderation.

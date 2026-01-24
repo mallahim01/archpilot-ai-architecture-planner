@@ -1,0 +1,60 @@
+{
+  "discovery": [
+    "Require a hybrid-monetized multi-instructor LMS/marketplace with monthly/annual all-access subscriptions plus optional single-course purchases later.",
+    "Budget is between $25–50k.",
+    "Project timeline is set for a 4-month MVP launch.",
+    "4-month launch timeline for MVP if scope is kept tight and shipped in phases.",
+    "Month 1 focuses on RBAC, course model, subscription plans, payments, and core admin management.",
+    "Month 2 involves catalog/search, checkout, student dashboard, course player, and email notifications.",
+    "Month 3 includes subscription lifecycle, enrollment events, instructor earnings, and payout cycles.",
+    "Month 4 focuses on QA, security, analytics, audit logs, support flows, performance, legal pages, and production readiness.",
+    "Platform will start with 3 roles: Admin, Student, Instructor (Teacher).",
+    "Backend-relevant screens needed: Public (landing, course catalog/preview, pricing, checkout), Auth (sign up/in, forgot password), Student (dashboard, course player, progress, certificates, billing/subscription management), Instructor (instructor dashboard, course builder/manager, enrollment stats, payout/earnings view), Admin (user/instructor management, course moderation, subscription plan config, payout cycle management, reporting).",
+    "Building a multi-instructor, role-based learning platform (LMS + marketplace) with subscriptions, progress tracking, certificates, payouts, and a centralized admin.",
+    "The platform is designed to be scalable and monetized from day one.",
+    "Target audience includes multiple instructors and a growing student base."
+  ],
+  "ui_ux": [
+    "Recommended UI/experience includes catalog browsing, search/filter, checkout flow, student and instructor dashboards.",
+    "Certificate generation mentioned as lightweight, potentially included.",
+    "Monetization as a hybrid model: Monthly + Annual subscriptions for platform-level access, and users can buy individual courses (one-time purchase).",
+    "UI question: should subscriptions unlock all courses on the platform or only a subscription catalog with some courses excluded?",
+    "Subscription lifecycle includes trial, upgrade, cancel, renew processes.",
+    "Web-first product (responsive), with optional mobile app later.",
+    "High-level scope for student experience: browse, subscribe/enroll, learn (lessons/modules), assessments, certificate, profile & learning history.",
+    "High-level scope for instructor experience: create/manage courses, upload content, view student progress, earnings/payout status.",
+    "Admin system functions: manage users/roles, approve courses/instructors, manage subscriptions/plans, payouts reconciliation, reports, refunds/disputes, content policy."
+  ],
+  "features_journeys": [
+    "Custom build path involves Next.js (web), NestJS API, Postgres, Prisma, managed auth (Clerk/Auth0), Stripe Billing, S3 for files, Mux/Cloudflare Stream for video, and Postmark for email.",
+    "Fallback option includes WordPress with LearnDash or LifterLMS and Stripe add-ons, alongside a small custom service for payouts and reporting.",
+    "Subscription lifecycle management and RBAC (Role-Based Access Control) are prominent features.",
+    "Instructor earnings and payout logic need to be clearly structured.",
+    "Custom platform recommended for handling subscriptions, RBAC, course authoring, progress tracking, certificates, and enrollment-based instructor payouts.",
+    "Payout logic recommendation: Keep internal for MVP with option to add Stripe Connect later.",
+    "Admin role journey: user management, course oversight, monetization controls, payout operations, platform monitoring.",
+    "Student role journey: discover courses, purchase/access courses, learning, assessment, certificate management, account settings.",
+    "Instructor role journey: course creation and publishing, managing student impact, earnings tracking, profile management.",
+    "Instructor payouts are based on enrollments, possibly as a fixed amount per enrollment or a revenue-share per enrollment.",
+    "Core features for MVP include subscription lifecycle, role-based access, course creation and publishing workflow, enrollment and progress tracking, certificates, payout calculations based on enrollments, and notifications such as email receipts and renewal/cancellation notices.",
+    "Core modules: course builder, content delivery, enrollment/subscription, progress & quizzes, certificates, instructor payout ledger, admin moderation/analytics."
+  ],
+  "tech_stack": [
+    "Next.js for web frontend, NestJS for API, Postgres with Prisma for database management.",
+    "Using managed authentication solutions like Clerk or Auth0.",
+    "S3 for storing files and Mux/Cloudflare Stream for handling video content.",
+    "Postmark designated for managing emails.",
+    "Primary stack recommendation details: Frontend with Next.js (React) and Tailwind, Backend with NestJS (Node/TypeScript) REST API, Postgres (managed) with Prisma ORM, Auth0 or Clerk for auth/RBAC, Stripe Billing for payments, S3-compatible storage and Mux/Cloudflare Stream for media, Postmark/SendGrid for email/notifications, Vercel for frontend hosting, Render/Fly.io for API, managed Postgres.",
+    "Fallback stack details: WordPress with LearnDash/LifterLMS, Stripe add-ons, and custom service for instructor earnings/payout calculations.",
+    "Trade-off noted: Custom solution is more maintainable for payout and admin workflows, while platform-first is quicker but less customizable for reporting and payout growth."
+  ],
+  "budget_timeline": [
+    "Launch timeline is 4 months.",
+    "Confirmed that both monthly and annual subscriptions should be available.",
+    "Users should be able to pay for courses individually."
+  ],
+  "open_questions": [
+    "Clarification needed on whether platform will be web-only or include mobile/responsive components.",
+    "Are subscriptions paid to the platform with the platform revenue-sharing/payout instructors, or does each instructor get paid directly with a platform fee on top?"
+  ]
+}

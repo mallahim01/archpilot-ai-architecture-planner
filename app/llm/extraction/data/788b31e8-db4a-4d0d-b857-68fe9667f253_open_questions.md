@@ -1,0 +1,2 @@
+- Should subscriptions unlock all courses on the platform or only a specific subscription catalog?
+- What are you trying to build (in one sentence), and who is it for?

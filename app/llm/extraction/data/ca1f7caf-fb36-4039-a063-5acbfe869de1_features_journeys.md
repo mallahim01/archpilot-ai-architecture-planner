@@ -1,0 +1,12 @@
+- Custom build path involves Next.js (web), NestJS API, Postgres, Prisma, managed auth (Clerk/Auth0), Stripe Billing, S3 for files, Mux/Cloudflare Stream for video, and Postmark for email.
+- Fallback option includes WordPress with LearnDash or LifterLMS and Stripe add-ons, alongside a small custom service for payouts and reporting.
+- Subscription lifecycle management and RBAC (Role-Based Access Control) are prominent features.
+- Instructor earnings and payout logic need to be clearly structured.
+- Custom platform recommended for handling subscriptions, RBAC, course authoring, progress tracking, certificates, and enrollment-based instructor payouts.
+- Payout logic recommendation: Keep internal for MVP with option to add Stripe Connect later.
+- Admin role journey: user management, course oversight, monetization controls, payout operations, platform monitoring.
+- Student role journey: discover courses, purchase/access courses, learning, assessment, certificate management, account settings.
+- Instructor role journey: course creation and publishing, managing student impact, earnings tracking, profile management.
+- Instructor payouts are based on enrollments, possibly as a fixed amount per enrollment or a revenue-share per enrollment.
+- Core features for MVP include subscription lifecycle, role-based access, course creation and publishing workflow, enrollment and progress tracking, certificates, payout calculations based on enrollments, and notifications such as email receipts and renewal/cancellation notices.
+- Core modules: course builder, content delivery, enrollment/subscription, progress & quizzes, certificates, instructor payout ledger, admin moderation/analytics.

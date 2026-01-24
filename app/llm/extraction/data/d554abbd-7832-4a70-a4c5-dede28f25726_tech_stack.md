@@ -1,0 +1,20 @@
+- Primary (recommended) tech stack: Custom build with shared backend.
+- Mobile (Student v1): React Native with TypeScript.
+- Web (Instructor/Admin): Next.js with TypeScript.
+- API: NestJS with TypeScript.
+- Database: PostgreSQL.
+- Auth/RBAC: Clerk or Auth0 with 3 fixed roles.
+- Payments: Stripe for subscriptions and one-off payments, Stripe Connect for instructor payouts.
+- Content delivery: S3-compatible object storage and CDN (CloudFront).
+- Jobs and notifications: Redis and BullMQ for asynchronous tasks (e.g., certificate issuance, emails, payout ledger tasks).
+- Email: Postmark/SendGrid.
+- Custom stack confirmed: Next.js (TypeScript) for web, NestJS (TypeScript) for backend API, PostgreSQL for DB, Stripe (Subscriptions and one-off) + Stripe Connect for payments, S3-compatible storage + CloudFront, Redis + BullMQ for async tasks, Clerk/Auth0 for authentication/RBAC, SendGrid/Postmark for email.
+- Mobile app to use React Native accessing the same API.
+- Proposed tech stack includes Next.js for web, React Native for mobile, and NestJS for backend API.
+- Database: PostgreSQL, possibly managed by Supabase or AWS RDS.
+- Auth0 or Clerk for authentication and role-based access control.
+- Payments through Stripe, with instructor payouts managed via Stripe Connect.
+- S3-compatible storage for content streaming with CloudFront CDN.
+- Background jobs managed by BullMQ and Redis.
+- Notifications handled via Postmark or SendGrid and Firebase Cloud Messaging/APNs for push notifications.
+- AI learning assistant potentially using OpenAI or Anthropic APIs.

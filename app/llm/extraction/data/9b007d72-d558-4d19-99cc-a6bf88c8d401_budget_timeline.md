@@ -1,0 +1,6 @@
+- Budget confirmed: $25–50k
+- Timeline: 4-month MVP
+- Budget confirmed as $25–50k.
+- MVP target timeline: 4 months.
+- The project is planned for a 4-month timeline.
+- Delivery approach with specific monthly goals for the 4-month timeline.

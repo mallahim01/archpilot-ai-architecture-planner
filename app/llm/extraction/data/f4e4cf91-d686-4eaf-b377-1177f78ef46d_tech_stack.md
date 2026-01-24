@@ -1,0 +1,16 @@
+- Frontend/SSR: Next.js (TypeScript, App Router)
+- Hosting: AWS Amplify
+- Auth: AWS Cognito (Customer/Staff/Admin)
+- Database: AWS RDS Postgres
+- Search: Postgres full-text search
+- Media: S3 + CloudFront
+- Email: SES
+- Payments: Stripe Checkout + webhooks
+- Confirmed primary tech stack: Next.js (TypeScript), AWS Amplify, RDS Postgres, S3/CloudFront, Cognito for roles/auth, Stripe Checkout, SES for emails, Postgres FTS.
+- Fallback option: Shopify (theme + minimal apps).
+- Primary option: Next.js with server actions/API routes, hosted on AWS Amplify or possibly Vercel.
+- AWS RDS (PostgreSQL) as the database solution.
+- Amazon S3 + CloudFront for file storage.
+- AWS Cognito for authentication.
+- Amazon SES for email order confirmations and updates.
+- Postgres full-text search mentioned as sufficient for up to ~5,000 books.

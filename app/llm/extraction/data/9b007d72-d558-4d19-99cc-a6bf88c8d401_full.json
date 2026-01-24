@@ -1,0 +1,56 @@
+{
+  "discovery": [
+    "Custom build with Next.js (web) + NestJS API + Postgres + Prisma + managed auth (Clerk/Auth0) + Stripe Billing",
+    "Fallback option includes WordPress + LearnDash/LifterLMS + Stripe add-ons with a custom service for payouts/reporting",
+    "User approved the primary custom stack choice.",
+    "Roles for initial launch: Admin, Student, Instructor.",
+    "Subscriptions initially unlock all courses.",
+    "Individual course purchases will be considered a later/optional phase.",
+    "Subscription plans: Monthly and Annual.",
+    "Instructor payouts based on enrollments, either as a fixed amount per enrollment or a revenue-share per enrollment.",
+    "Payouts calculated monthly with an admin-approved payout run."
+  ],
+  "ui_ux": [
+    "Subscription plans designed as a hybrid model: Monthly and Annual subscriptions for platform-level access, users can also buy individual courses as one-time purchases.",
+    "UI phase includes designing purchase flows and teacher earnings dashboards.",
+    "Question: should subscriptions unlock all courses on the platform, or only a subscription catalog?"
+  ],
+  "features_journeys": [
+    "Custom route supports subscription lifecycle + RBAC + instructor earnings/payout logic",
+    "Primary features for MVP: subscriptions, role-based access control (RBAC), course authoring, student progress tracking, certificate awarding, enrollment-based instructor payouts.",
+    "Month 1 - Foundation: RBAC for roles (Admin, Student, Instructor), course model development, publishing workflow, subscription plans (monthly/annual), payments and webhooks, core admin management.",
+    "Month 2 - Learning experience: catalog and search/filter, checkout, student dashboard, course player, progress tracking, email notifications.",
+    "Month 3 - Monetization and payouts: subscription lifecycle management, enrollment events, instructor earnings calculations, payout cycles and history, basic reporting.",
+    "Month 4 - Hardening and launch: QA, security measures, analytics, audit logs, support flows such as refunds and access overrides, performance optimization, legal compliance, and production readiness.",
+    "Admin Journey Details: User management, course oversight, monetization controls, enrollment and access management, payout operations, platform monitoring and analytics.",
+    "Student Journey Details: Discover courses, manage subscriptions, access course player, complete assessments, receive certificates, manage account.",
+    "Instructor Journey Details: Course creation and publishing, view course performance, earnings tracking, manage profile and payout methods.",
+    "Subscription lifecycle includes trial, upgrade, cancel, renew.",
+    "Core features for MVP: Role-based access, Course creation and publishing workflow, Enrollment and progress tracking, Certificates, Payout calculations, Notifications for emails regarding receipts, renewals, cancellations, and payouts.",
+    "Users should be able to pay for courses individually, in addition to subscriptions.",
+    "Teachers will be paid according to the number of people enrolled in their courses.",
+    "Platform to support course creation, subscription-based access, learning progress tracking, certifications, and payouts.",
+    "Centralized admin system to manage the platform."
+  ],
+  "tech_stack": [
+    "Primary stack confirmed: Next.js + NestJS + Postgres + Prisma + Clerk/Auth0 + Stripe Billing + S3 + Mux/Cloudflare Stream + Postmark",
+    "Fallback stack capabilities: WordPress + LearnDash/LifterLMS + Stripe add-ons with a custom payout/reporting service",
+    "Confirmed tech stack: Frontend with Next.js (React) + Tailwind, Backend with NestJS (Node/TypeScript) REST API, Database with Postgres (managed) + Prisma ORM.",
+    "Authentication via Auth0 or Clerk (managed) with server-side RBAC.",
+    "Payments and subscriptions managed via Stripe Billing with an option for Stripe Connect for instructor payouts.",
+    "Storage with S3-compatible object storage (AWS S3) and video streaming via Mux or Cloudflare Stream.",
+    "Email and notifications via Postmark or SendGrid.",
+    "Infrastructure: Vercel for frontend, Render/Fly.io for API, managed Postgres."
+  ],
+  "budget_timeline": [
+    "Budget confirmed: $25–50k",
+    "Timeline: 4-month MVP",
+    "Budget confirmed as $25–50k.",
+    "MVP target timeline: 4 months.",
+    "The project is planned for a 4-month timeline.",
+    "Delivery approach with specific monthly goals for the 4-month timeline."
+  ],
+  "open_questions": [
+    "Should subscriptions unlock all courses on the platform, or only a subscription catalog?"
+  ]
+}

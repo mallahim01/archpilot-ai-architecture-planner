@@ -1,0 +1,38 @@
+- Out of scope for MVP: promo codes, gift cards, wishlists, reviews, recommendations, international shipping, tax/VAT, multi-warehouse, advanced analytics.
+- Customer functionalities: browse, search, add to cart, checkout, view order confirmation, manage profile, view order history.
+- Staff functionalities: access back-office, view/manage orders queue, update fulfillment/shipping status, perform basic refunds.
+- Admin functionalities: manage catalog (CRUD), media, categories, inventory, configure store settings, manage staff permissions.
+- Key account decision: checkout default assumed account-required; open decision on guest checkout.
+- Stripe Checkout for payment and US address collection.
+- Back-office applications: Orders (queue, detail, status updates), Catalog (CRUD operations for books, categories), Customers (basic lookup), Settings (shipping rules, payment, and email configuration).
+- Cognito-based RBAC for authorization.
+- Guest checkout vs account-required, default assumption: guest checkout allowed.
+- Customer account functionality includes profile management, order history, and order detail.
+- Back-office functionality includes orders management, catalog/inventory management, customer lookup, and settings management.
+- Email notifications via SES: Order confirmation and optional order fulfilled email.
+- Admin capabilities include full catalog CRUD and inventory management.
+- Webhooks for Stripe events to sync payment and refund statuses.
+- Customers can checkout as guests with optional account creation.
+- Defined order statuses: Pending Payment, Paid, Fulfilled, Shipped, Completed, Cancelled, Refunded.
+- Success criteria include customer discovery of books, checkout with Stripe, and viewing order history.
+- Staff can fulfill orders, update statuses, and initiate basic refunds.
+- Admin can manage catalog, inventory, and store settings.
+- Order lifecycle includes email notifications for order confirmation, shipping updates, and refund confirmations.
+- Pending generation of a single implementation-ready spec covering: MVP scope, roles and permissions, screen list and user journeys, data model outline, backend/API surface, integrations, infrastructure & environments, and email templates/events.
+- Storefront pages include Home, Browse/Categories, Search results, and Book detail.
+- Commerce pages include Cart, Checkout, and Order confirmation.
+- Customer account pages include Sign in/up, Profile, Order history, and Order detail.
+- Back-office pages for Staff/Admin include Auth, Orders queue/detail, Catalog, Customers, and Settings.
+- Core backend features: Catalog with media, Search with filters, Cart management, Checkout with Stripe, Orders with tracking and refunds, RBAC in Cognito, and audit/ops logs.
+- Feature decisions: Storefront includes editorial/visual home, categories, search, book detail, cart, Stripe Checkout, order confirmation, account, and order history.
+- Back-office includes secure login for staff/admin, order queue, fulfillment, basic refunds/status updates, catalog CRUD, inventory, and customer lookup.
+- Checkout: decided on custom in-app checkout UI with Stripe payments.
+- Two main stack options presented: Custom build with AWS/Next.js or platform build with Shopify.
+- In the custom build, you own the data model (catalog, inventory, orders).
+- Role journeys confirmed: Customer (storefront entry, browse, cart actions, checkout, receive order confirmations, manage account), Staff (back-office entry, view paid orders, manage fulfillment, handle cancellations/refunds, customer and order lookup), Admin (catalog/inventory management, order oversight, customer overview, store settings management).
+- Order lifecycle: placed, paid, fulfilled, shipped, delivered.
+- Nice-to-have features deferred: Reviews/ratings, wishlists, discount codes, editorial collections, abandoned cart emails.
+- Customer-facing features include: browse catalog by categories, search and filters (author, price, category, format), book detail pages, cart and checkout, online payments (card and wallets), flat $15 shipping in the USA, order confirmation, and basic order tracking.
+- Admin features include: add/edit books in bulk via CSV import, manage inventory, order management, and generate basic sales reports.
+- Optional guest checkout feature mentioned.
+- Integrations suggested: Shippo/ShipStation, QuickBooks/Xero, Klaviyo/Mailchimp.

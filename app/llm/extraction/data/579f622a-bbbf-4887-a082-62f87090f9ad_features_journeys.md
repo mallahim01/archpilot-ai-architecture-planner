@@ -1,0 +1,13 @@
+- The platform will be a standard web and mobile app experience for both desktop and mobile users.
+- The focus is on standard streaming, progress tracking, and certificates without hard 'native-only' requirements.
+- The custom app is designed to handle subscriptions, one-off purchases, entitlement logic, and enrollment-based instructor payouts.
+- Admin actions: Manage users, courses/content, monetization, entitlements, payouts, audit/monitoring.
+- Student actions: Browse catalog, purchase subscriptions, access learning, track progress, manage account/billing.
+- Instructor actions: Create courses, handle publishing, view aggregated analytics, manage payouts and profile.
+- Role-based access control for students, instructors, and admins.
+- Subscription lifecycle management and entitlement for all courses.
+- Course delivery with progress tracking and certificate issuance.
+- Instructor payout calculations based on enrollments with admin-managed payout cycles.
+- Core roles: Student, Teacher/Instructor, Admin.
+- Key product modules: Course authoring, Content delivery, Access & monetization, Learning tracking, Certification, Payouts, Admin system.
+- Students have the option to pay via platform-level subscription, per-course purchases, or both.

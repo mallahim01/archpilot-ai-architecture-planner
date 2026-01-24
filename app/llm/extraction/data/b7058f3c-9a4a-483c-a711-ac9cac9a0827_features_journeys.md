@@ -1,0 +1,11 @@
+- Custom stack to support RBAC, subscription entitlements, progress tracking, certificates, and enrollment-based instructor payouts.
+- Web and app platform supports auth, catalog, course player UI, progress tracking, downloads, push notifications
+- Shared backend (NestJS and Postgres) for payout runs and reporting
+- Recommendation for a custom app with managed services for subscriptions, one-off purchases, entitlement logic, and enrollment-based instructor payouts.
+- The roles confirmed for launch are Admin, Student, and Instructor/Teacher.
+- Admin role includes platform activity tracking with complete control over features.
+- Student role includes the actions of browsing, purchasing subscriptions, enrolling in courses, tracking progress, and obtaining certificates.
+- Instructor role includes creating courses, publishing, viewing analytics, and managing payouts.
+- Core roles identified: Student, Teacher/Instructor, Admin with specific permissions and functionalities.
+- Key product modules include Course Authoring, Content Delivery, Access & Monetization, Learning Tracking, Certification, Payouts, and Admin System.
+- The platform will support course creation, subscription-based access, learning progress tracking, certifications, and payouts managed through a centralized admin system.

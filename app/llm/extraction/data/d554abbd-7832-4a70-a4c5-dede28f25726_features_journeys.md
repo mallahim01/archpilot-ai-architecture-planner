@@ -1,0 +1,14 @@
+- V1 scope includes phased rollout: student-only mobile app and web application for instructors and admins.
+- Requirement for both web and mobile apps to be ready at launch.
+- Focus on core student mobile flows initially: browse, purchase, course player, progress, certificates, billing.
+- Instructor and admin remain web-first at launch.
+- The AI learning assistant should be integrated as a separate service within the backend, possibly using OpenAI or Anthropic.
+- The mobile application should support learning on both iOS and Android.
+- Core features implied by screens: Role-based access control, Catalog + search/filtering, Payments (subscriptions and one-off purchases), Entitlements, Course delivery (video/file hosting integration, lesson completion tracking), Certificates generation and verification, Instructor payout ledger tied to enrollments, Notifications (email for receipts, enrollment, certificate, payout events).
+- Subscription plans include Monthly and Annual, granting access to a defined catalog scope.
+- Course purchases grant perpetual or time-limited access to specific courses.
+- Entitlements system to check user access to specific courses.
+- Every transaction treated as a ledgered event: subscription invoices/renewals, one-off payments, refunds/chargebacks.
+- Instructor payouts include per enrollment for one-off purchases and subscription payouts attributed to enrollments during billing periods.
+- Admin controls include defining subscription-eligible courses, setting instructor revenue share defaults/per-instructor overrides, managing payout schedules, and enrollment verification rules.
+- Platform is designed for multiple instructors, role-based with centralized admin, and aims for scalability.

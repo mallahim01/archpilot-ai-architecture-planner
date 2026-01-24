@@ -1,0 +1,18 @@
+- Requirement document is ready and can be opened from the Requirements tab.
+- Approved Primary tech stack: Next.js (web) + NestJS API + Postgres + Prisma + Clerk/Auth0 + Stripe Billing, with S3, Mux/Cloudflare Stream, Postmark.
+- Fallback option: WordPress + LearnDash/LifterLMS + Stripe add-ons with a small custom payouts service.
+- Budget: $25–50k.
+- Timeline: 4-month MVP target.
+- Focus on subscription lifecycle, RBAC, instructor earnings/payout logic.
+- The user confirmed their budget is $25k to $50k with no preferred stack.
+- The system is confirmed as web-only.
+- Platform will run with 3 roles for MVP: Admin, Student, Instructor (Teacher).
+- Initial launch involves subscriptions (monthly/annual) unlocking access to all courses (all-access pass).
+- Individual course purchases planned as a later/optional phase.
+- Users can buy individual courses as a one-time purchase.
+- Instructor payouts can be implemented as a fixed amount per enrollment or a revenue-share per enrollment.
+- Subscriptions unlock a defined catalog (or all courses), while a la carte purchases permanently unlock specific courses.
+- Payouts are calculated monthly, with an admin-approved payout run.
+- Role-based online teaching and learning platform to connect teachers and students through structured digital courses.
+- Platform supports course creation, subscription-based access, learning progress tracking, certifications, and payouts.
+- Objective is to create a scalable, production-ready education platform supporting multiple instructors and a growing student base.

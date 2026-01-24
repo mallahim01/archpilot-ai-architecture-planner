@@ -2,6 +2,7 @@ WEB_PIPELINE = [
     "web_discovery",
     "web_ui_features",
     "web_user_journeys",
+    "web_budget_timeline",
     "web_tech_stack",
     "web_generate_requirements",
 ]

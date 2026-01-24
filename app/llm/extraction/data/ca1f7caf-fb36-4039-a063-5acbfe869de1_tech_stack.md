@@ -1,0 +1,7 @@
+- Next.js for web frontend, NestJS for API, Postgres with Prisma for database management.
+- Using managed authentication solutions like Clerk or Auth0.
+- S3 for storing files and Mux/Cloudflare Stream for handling video content.
+- Postmark designated for managing emails.
+- Primary stack recommendation details: Frontend with Next.js (React) and Tailwind, Backend with NestJS (Node/TypeScript) REST API, Postgres (managed) with Prisma ORM, Auth0 or Clerk for auth/RBAC, Stripe Billing for payments, S3-compatible storage and Mux/Cloudflare Stream for media, Postmark/SendGrid for email/notifications, Vercel for frontend hosting, Render/Fly.io for API, managed Postgres.
+- Fallback stack details: WordPress with LearnDash/LifterLMS, Stripe add-ons, and custom service for instructor earnings/payout calculations.
+- Trade-off noted: Custom solution is more maintainable for payout and admin workflows, while platform-first is quicker but less customizable for reporting and payout growth.

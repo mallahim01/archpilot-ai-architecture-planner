@@ -1,0 +1,39 @@
+- Final MVP Requirements Document will be generated for the US-only online bookstore.
+- Product scope & non-goals include US-only, flat $15 shipping per order, no taxes.
+- User roles & permissions are defined as Customer, Staff, and Admin via Cognito RBAC.
+- Functional requirements by area include: Storefront, Cart, Checkout, Customer account, and Back-office.
+- Key data entities include books, categories, inventory, orders, customers, and media.
+- System behaviors involve emails via SES and media via S3/CloudFront.
+- Integrations include Stripe Checkout, Cognito, and SES.
+- Operational requirements involve auditability, basic admin logging assumptions, and environments.
+- Acceptance criteria for each major feature will be defined.
+- Out of scope and future enhancements list will be included.
+- MVP commerce rules locked: US-only shipping, flat $15 shipping per order, no taxes collected/calculated, payments via Stripe Checkout.
+- Roles locked: Customer (shopper), Staff (order operations), Admin (full control).
+- Out of scope: International shipping, tax calculation/collection, subscriptions, memberships, gift cards, discounts, multi-warehouse, partial shipments, complex shipping rates, returns portal.
+- Order status model recommended: Created, Paid, Fulfillment Pending, Fulfilled, Cancelled, Refunded.
+- Inventory behavior: Reserve/decrement strategy, decrement inventory when payment confirmed, manual restock on refund unless chosen otherwise.
+- Assume no ebooks, only physical books, priced in USD.
+- Fulfillment to US addresses only, no local pickup.
+- No tax collected as per MVP scope.
+- Payments via Stripe Checkout including cards and Apple Pay/Google Pay.
+- Guest checkout allowed with optional account creation; Staff/Admin login required.
+- Order statuses include Pending Payment, Paid, Fulfilled, Shipped, Completed, Cancelled, and Refunded.
+- Postgres full-text search across title, author, ISBN, and description.
+- The requirement document for the US-only online bookstore MVP is ready, focusing on selling physical books with a clean storefront experience, Stripe Checkout, and a lightweight back-office for fulfillment and basic refunds.
+- MVP roles locked: Customer, Staff, Admin.
+- Customer journey includes browsing catalog, managing cart, checking out with US shipping address, order confirmation, and managing profile.
+- Staff journey includes order management, updating statuses, refunds via Stripe, and customer/order lookup.
+- Admin journey includes catalog management, inventory updates, and configurations for store settings.
+- Backend architecture decision needed: single backend (Next.js API) vs separate service layer (e.g., NestJS).
+- Proceeding with custom stack for US-only bookstore MVP.
+- Default scope: lightweight admin/back-office, flat $15 shipping, Stripe payments, no taxes.
+- Primary recommended option: Custom build using Next.js with managed AWS services (Amplify, Cognito, RDS, S3, SES) and Stripe Checkout.
+- Fallback option: Platform solution using Shopify with themes and apps, integrated with Stripe/Shopify Payments.
+- Confirmation of three primary roles: Admin, Customer, Staff (store operations/fulfillment).
+- The store will sell approximately 5,000 books across various categories, including self-help, fiction, kids, psychology, and business.
+- The bookstore will offer physical shipping only, not digital ebooks.
+- Customer-facing features: Home, category, product detail pages, search, filters, sorting, cart, checkout, payments (card/wallet), shipping options, address management, order confirmation, order tracking, customer accounts, optional guest checkout.
+- Back-office features: Product/catalog management (variants, images, pricing), inventory/stock management, orders, fulfillment, refunds, promotions (discount codes, bundles), customer management, basic analytics.
+- Common add-ons: Subscriptions, digital products, services bookings, multi-location inventory, integrations (Shippo/ShipStation, QuickBooks/Xero, Klaviyo/Mailchimp).
+- Assumptions: Web-first store with admin dashboard, selling physical products.

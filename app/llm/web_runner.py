@@ -5,7 +5,7 @@ from app.web_llm_prompts.web_discovery import WEB_DISCOVERY_SYSTEM
 from app.web_llm_prompts.web_ui_features import WEB_UI_FEATURES_SYSTEM
 from app.web_llm_prompts.web_user_journeys import WEB_USER_JOURNEYS_SYSTEM
 from app.web_llm_prompts.web_tech_stack import WEB_TECH_STACK_SYSTEM
-
+from app.web_llm_prompts.web_budget_timeline import WEB_BUDGET_TIMELINE_SYSTEM
 # client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # if not os.getenv("OPENAI_API_KEY"):
 #     raise ValueError("OPENAI_API_KEY is not set")
@@ -22,6 +22,7 @@ SYSTEM_BY_STAGE = {
     "web_discovery": WEB_DISCOVERY_SYSTEM,
     "web_ui_features": WEB_UI_FEATURES_SYSTEM,
     "web_user_journeys": WEB_USER_JOURNEYS_SYSTEM,
+    "web_budget_timeline": WEB_BUDGET_TIMELINE_SYSTEM,
     "web_tech_stack": WEB_TECH_STACK_SYSTEM,
 }
 

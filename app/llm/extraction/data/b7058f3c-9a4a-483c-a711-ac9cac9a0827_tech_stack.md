@@ -1,0 +1,17 @@
+- Primary tech stack includes Next.js, NestJS, Postgres, Stripe, Supabase Auth or Auth0 (managed auth), and React Native (Expo).
+- Fallback tech stack: WordPress + LearnDash + Stripe.
+- Web: Next.js (React)
+- Backend: NestJS (Node) API with background jobs
+- Database: Postgres (Supabase or AWS RDS)
+- Auth/RBAC: Supabase Auth or Auth0
+- Payments: Stripe
+- Storage/Media: S3 + CloudFront, optionally Mux/Vimeo for video
+- Mobile App: React Native (Expo)
+- Frontend recommendation: Next.js (web app for student/instructor/admin).
+- Backend/API recommendation: Node.js (NestJS) or serverless (AWS Lambda).
+- Database recommendation: PostgreSQL (Supabase or AWS RDS).
+- Auth and RBAC: Supabase Auth or Auth0, with roles for Admin, Instructor, Student.
+- Payments/Subscriptions: Stripe for monthly/annual subscriptions and one-time course purchases.
+- Content storage/streaming: S3 + CloudFront or Mux/Vimeo.
+- Email/Notifications: Postmark or SendGrid.
+- Admin Tools: Retool or a lightweight internal admin in Next.js.

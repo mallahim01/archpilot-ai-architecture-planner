@@ -1,0 +1,15 @@
+- Custom route supports subscription lifecycle + RBAC + instructor earnings/payout logic
+- Primary features for MVP: subscriptions, role-based access control (RBAC), course authoring, student progress tracking, certificate awarding, enrollment-based instructor payouts.
+- Month 1 - Foundation: RBAC for roles (Admin, Student, Instructor), course model development, publishing workflow, subscription plans (monthly/annual), payments and webhooks, core admin management.
+- Month 2 - Learning experience: catalog and search/filter, checkout, student dashboard, course player, progress tracking, email notifications.
+- Month 3 - Monetization and payouts: subscription lifecycle management, enrollment events, instructor earnings calculations, payout cycles and history, basic reporting.
+- Month 4 - Hardening and launch: QA, security measures, analytics, audit logs, support flows such as refunds and access overrides, performance optimization, legal compliance, and production readiness.
+- Admin Journey Details: User management, course oversight, monetization controls, enrollment and access management, payout operations, platform monitoring and analytics.
+- Student Journey Details: Discover courses, manage subscriptions, access course player, complete assessments, receive certificates, manage account.
+- Instructor Journey Details: Course creation and publishing, view course performance, earnings tracking, manage profile and payout methods.
+- Subscription lifecycle includes trial, upgrade, cancel, renew.
+- Core features for MVP: Role-based access, Course creation and publishing workflow, Enrollment and progress tracking, Certificates, Payout calculations, Notifications for emails regarding receipts, renewals, cancellations, and payouts.
+- Users should be able to pay for courses individually, in addition to subscriptions.
+- Teachers will be paid according to the number of people enrolled in their courses.
+- Platform to support course creation, subscription-based access, learning progress tracking, certifications, and payouts.
+- Centralized admin system to manage the platform.

@@ -12,6 +12,7 @@ from app.auth import create_access_token
 from app.deps import get_current_user
 from app.models import User
 from app import crud
+from app.crud_jobs import get_job_owned
 from app.schemas import ChatResponseIn, ChatResponseOut
 from app.llm.llm import call_llm
 from app.llm.web_runner import web_call_stage_llm
@@ -30,7 +31,7 @@ app = FastAPI(title="FastAPI Chat Backend")
 @app.on_event("startup")
 async def startup():
     async with engine.begin() as conn:
-        # await conn.run_sync(Base.metadata.drop_all)   # ⚠️ DEV ONLY, to re-initialize db
+        await conn.run_sync(Base.metadata.drop_all)   # ⚠️ DEV ONLY, to re-initialize db
         await conn.run_sync(Base.metadata.create_all)
 
 # @app.on_event("startup")
@@ -195,6 +196,7 @@ async def response_route(
     }
 
     user_msg = payload.message
+    print("User message......")
 
     # store user message
     await crud.add_message(db, current_user.id, chat.id, "user", user_msg, meta={"stage": stage})
@@ -223,17 +225,30 @@ async def response_route(
     # read summary after update
     updated_summary = await crud.get_chat_summary(db, current_user.id, chat.id)
 
+
     # deterministic stage advance
     if advance:
         nxt = web_next_stage(stage)
         await crud.set_chat_assignment(db, current_user.id, chat.id, nxt)
+        
 
         if nxt == "web_generate_requirements":
-            # create job + trigger background task
+            # ✅ 1) Reuse if already generated
+            existing_job_id = getattr(chat, "latest_requirements_job_id", None)
+            if existing_job_id and requirements_bundle_exists(str(existing_job_id)):
+                return ChatResponseOut(
+                    response="✅ I already generated your documents earlier. You can open them now.",
+                    summary=updated_summary.summary if updated_summary else None,
+                    action="generate_requirements",
+                    action_status="ready",  # or "done"
+                    job_id=existing_job_id,
+                )
+
+            # ✅ 2) Otherwise create job + run
+            print("Creating a job.....")
             job = await create_job(db, current_user.id, chat.id, "requirements_doc")
             background_tasks.add_task(run_requirements_job, current_user.id, chat.id, job.id)
-            print("JOB ID:")
-            print(job.id)
+            print("JOB ID:", job.id)
 
             return ChatResponseOut(
                 response="Perfect — I’m preparing your requirement document now. It will appear shortly.",
@@ -247,6 +262,19 @@ async def response_route(
         response=assistant_text,
         summary=updated_summary.summary if updated_summary else None,
     )
+    
+    # #     return ChatResponseOut(
+    # #         response="Perfect — I’m preparing your requirement document now. It will appear shortly.",
+    # #         summary= "",
+    # #         action="generate_requirements",
+    # #         action_status="queued",
+    # #         job_id=job.id,
+    # #     )
+
+    # # return ChatResponseOut(
+    # #     response="Job not created...",
+    # #     summary="",
+    # # )
 
 
 # @app.post("/response", response_model=ChatResponseOut)

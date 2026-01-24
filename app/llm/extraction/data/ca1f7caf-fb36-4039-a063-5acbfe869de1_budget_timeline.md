@@ -1,0 +1,3 @@
+- Launch timeline is 4 months.
+- Confirmed that both monthly and annual subscriptions should be available.
+- Users should be able to pay for courses individually.

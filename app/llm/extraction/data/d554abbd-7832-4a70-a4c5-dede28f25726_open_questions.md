@@ -1,0 +1,2 @@
+- Decision needed on whether mobile apps should have full parity for instructor/admin roles or if it’s acceptable for student-only mobile on v1.
+- Do students subscribe to the entire platform (one subscription unlocks eligible courses), or do they subscribe to individual teachers/courses (multiple subscriptions possible)?

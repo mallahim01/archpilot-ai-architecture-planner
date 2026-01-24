@@ -1,0 +1,50 @@
+- Storefront features include home/browse, search, book detail, cart, checkout, and account management.
+- Back-office features include authentication, orders management, catalog management, customer lookup, and store settings.
+- Order fulfillment and refund flows initiated from back-office with integration to Stripe API.
+- Comprehensive order and fulfillment status updates.
+- Assumed checkout defaults include guest checkout allowed with optional account creation.
+- Physical books only, priced in USD.
+- Fulfillment: ship to US addresses only, flat $15 shipping per order, no local pickup.
+- No tax collected as per MVP scope.
+- Payments via Stripe Checkout with cards and Apple Pay/Google Pay where available.
+- Order statuses include: Pending Payment, Paid, Fulfilled, Shipped, Completed, Cancelled, Refunded.
+- Search uses Postgres full-text search across title, author, ISBN, description.
+- In-scope features for MVP include physical product catalog (books) with images, cart, Stripe Checkout, order lifecycle with email notifications, back-office for orders, catalog, inventory, basic customer lookup, and settings.
+- Out-of-scope features: International shipping, tax calculation/collection, discount codes, gift cards, loyalty programs, subscriptions, multiple warehouses, partial shipments, returns portal, marketplace/third-party sellers.
+- Role-based permissions outlined for Customer, Staff, and Admin.
+- Detailed descriptions of roles and permissions for Customer, Staff, and Admin.
+- Functional Requirements for frontend and back-office, including Storefront, Cart, Checkout, Customer Account, Orders, Refunds, Catalog & Inventory, Customers, and Settings.
+- Email notifications setup and specific customer and staff/admin emails identified.
+- Data model proposed with core tables/objects like User, CustomerProfile, Book, Category, BookImage, etc.
+- Core workflows outlined: Customer purchase flow, Fulfillment flow, Refund flow.
+- Roles and permissions detailed for Customer, Staff, and Admin with specific RBAC rules.
+- User journeys include storefront interactions, cart and checkout processes, order confirmation, account management, and back-office operations.
+- Locked Stage 3 roles & journeys:
+  - Customer: Entry via storefront or direct book URL, actions include browse/search catalog, manage cart, checkout with US shipping address, Stripe payment, no taxes, order confirmation, account management, view order history.
+  - Staff: Entry via back-office login, actions include managing orders queue/order status, basic refund via Stripe, customer/order lookup.
+  - Admin: Entry via back-office login, actions include Catalog CRUD, inventory updates, order/customer oversight, store settings management.
+- Core backend features:
+  - Catalog + media: books, authors (optional), categories, images (S3), inventory.
+  - Search: query + filters via Postgres FTS.
+  - Cart: persistent cart per user and guest cart option.
+  - Checkout: Stripe integration, US shipping validation, force flat $15 shipping, no taxes.
+  - Orders: tracking, fulfillment, refunds (Stripe), email notifications via SES.
+  - RBAC: roles managed via Cognito for API authorization.
+  - Audit/Ops: event log for order status/refunds by staff/admin.
+- Storefront for customers will include: home (editorial/visual), browse categories, search, book detail, cart, Stripe Checkout, order confirmation, account, and order history.
+- Back-office for staff/admin will feature: secure login, order queue, fulfill/mark shipped, basic refunds/status updates, catalog CRUD, inventory management, and light customer lookup.
+- Rules enforced: US addresses only, $15 shipping on every order, no tax calculation, and emails via SES.
+- Primary stack includes AWS Amplify for CI/CD and previews, Amazon S3 + CloudFront for file storage, Amazon Cognito for authentication, Stripe Checkout for payments, Amazon SES for emails, and Postgres full-text search.
+- Custom solution allows role-gated admin built into the same Next.js app.
+- Shopify handles catalog, checkout, payments, shipping rules, and emails out of the box.
+- Primary screens: Storefront (Home, Category/Browse, Search results, Book detail, Cart, Checkout, Order confirmation), Account (Sign in/up, Profile, Order history, Order detail), Admin (Dashboard, Books catalog, Orders, Customers, Promotions, Content pages).
+- Must-have backend features: Catalog management for ~5,000 books, Search + filtering, Cart + checkout with payment gateway, Shipping rule (US-only, $15 flat), No taxes, Order lifecycle management, Admin order/inventory updates, Email notifications via an email provider.
+- Nice-to-have features: Reviews/ratings, wishlists, discount codes, featured/editorial collections, abandoned cart emails.
+- Customer-facing: Search with filters like author, price, category, format.
+- Book detail pages to include description, author, ISBN, cover, reviews (optional).
+- Admin feature: Add/edit books in bulk, highlighting the importance of CSV import due to the large catalog.
+- Physical shipping only (not digital ebooks), emphasizing web-first store focus.
+- Order management to include features for order fulfillment, cancellation, and refunds.
+- Basic sales reports required for admin operations.
+- Customer-facing: Home, category pages, product detail pages, search, filters, sorting, cart, checkout, payments, shipping options, address management, order confirmation, order tracking, customer accounts, optional guest checkout.
+- Back office: Product/catalog management including variants and pricing, inventory/stock management, orders, fulfillment, refunds, promotions, customer management, basic analytics.

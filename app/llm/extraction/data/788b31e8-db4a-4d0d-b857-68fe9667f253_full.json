@@ -1,0 +1,47 @@
+{
+  "discovery": [
+    "User approved the primary stack option: Next.js + NestJS + Postgres + Prisma with managed services like Clerk/Auth0 for authentication and Stripe Billing for payments.",
+    "Fallback option is WordPress with LearnDash/LifterLMS and Stripe add-ons for basic functionality.",
+    "The product is web-only.",
+    "Target launch in 4 months with subscriptions, RBAC, course authoring, progress tracking, and enrollment-based instructor payouts.",
+    "Hybrid model with monthly and annual subscriptions for platform-level access, and a la carte course purchases.",
+    "Instructor payouts based on enrollments, with options for fixed amount per enrollment or revenue-share.",
+    "AIventex is acting as a Discovery Architect in the discovery phase to develop product scope and system direction."
+  ],
+  "ui_ux": [
+    "Web-only MVP confirmed for the initial launch.",
+    "UI will proceed in phases over 4 months for development.",
+    "Web-first product design.",
+    "Roles for MVP: Admin, Student, Instructor (Teacher).",
+    "Backend-relevant screens: Public (landing, course catalog/preview, pricing, checkout), Auth (sign up/in, forgot password), Student (dashboard, course player, progress, certificates, billing/subscription management), Instructor (instructor dashboard, course builder/manager, enrollment stats, payout/earnings view), Admin (user/instructor management, course moderation, subscription plan config, payout cycle management, reporting).",
+    "Subscriptions unlock either all courses on the platform or a defined catalog.",
+    "UI development to shape purchase flows and teacher earnings dashboards."
+  ],
+  "features_journeys": [
+    "Ensure subscription lifecycle management, RBAC, course publishing, progress tracking, certifications, and enrollment-based payouts are implemented without plugin constraints in the custom build.",
+    "Month 1 aims to establish RBAC for Admin, Student, Instructor roles, as well as course model and publishing workflow.",
+    "Monthly and annual subscription plans to be set in Month 1, along with payments and webhooks.",
+    "Core admin management to be established in Month 1.",
+    "Month 2 will focus on learning experience, including catalog and search/filter, checkout process, student dashboard, course player, and progress tracking.",
+    "Month 3 will concentrate on monetization and payouts, including subscription lifecycle management, instructor earnings calculations, payout cycles, and basic reporting.",
+    "Month 4 will deal with hardening and launch preparation including QA, security measures, analytics, audit logs, support flows, and production readiness.",
+    "Assumed launch features: web-first, Stripe for payments, all-access subscriptions, English-first interface, and lightweight certificate generator.",
+    "Initial launch subscriptions (monthly/annual) unlock access to all courses (all-access pass). Individual course purchases as a later/optional phase.",
+    "Core features for MVP include: Subscription lifecycle (trial/upgrade/cancel/renew), Role-based access (student/instructor/admin), Course creation and publishing workflow, Enrollment and progress tracking, Certificates issuance, Payout calculations based on enrollments, Admin-managed payout cycles, Notifications (email receipts, renewal/cancellation, payout notices).",
+    "Student Experience: browse, subscribe/enroll, learn through lessons/modules, take assessments, earn certificates, manage profile and learning history.",
+    "Instructor Experience: create and manage courses, upload content, view student progress, check earnings and payout status.",
+    "Admin System: manage users/roles, approve courses/instructors, manage subscriptions/plans, reconcile payouts, generate reports, handle refunds/disputes, enforce content policy."
+  ],
+  "tech_stack": [
+    "Primary tech stack reaffirmed as: Next.js (Vercel), NestJS (Render/Fly), Postgres (managed) + Prisma, Clerk/Auth0, Stripe Billing, S3-compatible storage, Mux/Cloudflare Stream, and Postmark for email.",
+    "Primary Stack confirmed: Custom web app with Next.js (React) + Tailwind, NestJS (Node/TypeScript) REST API, Postgres with Prisma ORM, Auth0 or Clerk for authentication, Stripe Billing, AWS S3 or Cloudflare Stream for storage, Postmark or SendGrid for emails, Vercel for frontend, Render/Fly.io for API."
+  ],
+  "budget_timeline": [
+    "Budget confirmed to be between $25–50k with a 4-month MVP timeline.",
+    "Budget range targeting $20-60k."
+  ],
+  "open_questions": [
+    "Should subscriptions unlock all courses on the platform or only a specific subscription catalog?",
+    "What are you trying to build (in one sentence), and who is it for?"
+  ]
+}

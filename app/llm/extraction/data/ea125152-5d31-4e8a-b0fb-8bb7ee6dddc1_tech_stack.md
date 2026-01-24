@@ -1,0 +1,4 @@
+- Primary stack: Next.js (Vercel), NestJS (Render/Fly), Postgres (managed) + Prisma, Clerk/Auth0, Stripe Billing, S3, Mux/Cloudflare Stream, Postmark.
+- Fallback stack: WordPress + LearnDash/LifterLMS + Stripe add-ons.
+- Preferred tech stack reiterated as: Frontend - Next.js + Tailwind; Backend - NestJS REST API; DB - Postgres + Prisma ORM; Auth - Auth0 or Clerk; Payments - Stripe Billing + Stripe Connect; Storage - S3 (AWS) + Mux; Email - Postmark; Infra - Vercel (frontend) + Render/Fly.io (API) + managed Postgres.
+- Fallback: WordPress with LearnDash/LifterLMS + Stripe add-ons.

@@ -1,0 +1,63 @@
+{
+  "discovery": [
+    "Custom stack confirmed as the primary approach: Next.js (Web), NestJS (API), Postgres (DB), Stripe (Payments/Billing), Supabase Auth or Auth0 (Auth), S3 + CloudFront for Storage/Delivery, React Native (Expo) for Mobile.",
+    "Fallback plan: WordPress + LearnDash + Stripe if needed to compress scope or time.",
+    "Standard web and mobile platform for desktop and mobile users",
+    "React Native (Expo) recommended for iOS and Android within $25k–$50k budget and 4-month timeline",
+    "Primary tech stack: Custom API-first design with a shared codebase for web and mobile",
+    "User needs both a web and mobile app to be developed.",
+    "Preference for custom build on a managed LMS/e-commerce backbone to support multi-instructor, hybrid monetization, and payout features.",
+    "Initial monetization includes a subscription model that unlocks access to all courses, described as an 'all-access pass.'",
+    "The data model is flexible enough to add individual course purchases in the future without redesign.",
+    "Subscription model to unlock all courses initially, with options for monthly and annual subscriptions as well as individual course purchases.",
+    "Instructor payouts to be based on enrollment counts.",
+    "The platform is a role-based online teaching and learning platform designed to connect teachers and students through structured digital courses.",
+    "Goal: Create a scalable, production-ready education platform that supports multiple instructors, a growing student base, and monetization from day one."
+  ],
+  "ui_ux": [
+    "One codebase for iOS and Android with React Native for faster deployment and cost control",
+    "Same API for both web and mobile clients for consistent experience and shared components",
+    "High-level screens and pages include Landing, course catalog/browse, course detail, pricing, signup/login, verify email, forgot password, student dashboard (enrollments/progress), course player, certificates, billing/subscription, instructor dashboard, course builder/manage, analytics (enrollments), payout history, admin management dashboard for users/roles, courses/moderation, subscription plans, payouts (cycle setup + approvals), and reports.",
+    "Students should be able to pay for courses individually in addition to subscription options."
+  ],
+  "features_journeys": [
+    "Custom stack to support RBAC, subscription entitlements, progress tracking, certificates, and enrollment-based instructor payouts.",
+    "Web and app platform supports auth, catalog, course player UI, progress tracking, downloads, push notifications",
+    "Shared backend (NestJS and Postgres) for payout runs and reporting",
+    "Recommendation for a custom app with managed services for subscriptions, one-off purchases, entitlement logic, and enrollment-based instructor payouts.",
+    "The roles confirmed for launch are Admin, Student, and Instructor/Teacher.",
+    "Admin role includes platform activity tracking with complete control over features.",
+    "Student role includes the actions of browsing, purchasing subscriptions, enrolling in courses, tracking progress, and obtaining certificates.",
+    "Instructor role includes creating courses, publishing, viewing analytics, and managing payouts.",
+    "Core roles identified: Student, Teacher/Instructor, Admin with specific permissions and functionalities.",
+    "Key product modules include Course Authoring, Content Delivery, Access & Monetization, Learning Tracking, Certification, Payouts, and Admin System.",
+    "The platform will support course creation, subscription-based access, learning progress tracking, certifications, and payouts managed through a centralized admin system."
+  ],
+  "tech_stack": [
+    "Primary tech stack includes Next.js, NestJS, Postgres, Stripe, Supabase Auth or Auth0 (managed auth), and React Native (Expo).",
+    "Fallback tech stack: WordPress + LearnDash + Stripe.",
+    "Web: Next.js (React)",
+    "Backend: NestJS (Node) API with background jobs",
+    "Database: Postgres (Supabase or AWS RDS)",
+    "Auth/RBAC: Supabase Auth or Auth0",
+    "Payments: Stripe",
+    "Storage/Media: S3 + CloudFront, optionally Mux/Vimeo for video",
+    "Mobile App: React Native (Expo)",
+    "Frontend recommendation: Next.js (web app for student/instructor/admin).",
+    "Backend/API recommendation: Node.js (NestJS) or serverless (AWS Lambda).",
+    "Database recommendation: PostgreSQL (Supabase or AWS RDS).",
+    "Auth and RBAC: Supabase Auth or Auth0, with roles for Admin, Instructor, Student.",
+    "Payments/Subscriptions: Stripe for monthly/annual subscriptions and one-time course purchases.",
+    "Content storage/streaming: S3 + CloudFront or Mux/Vimeo.",
+    "Email/Notifications: Postmark or SendGrid.",
+    "Admin Tools: Retool or a lightweight internal admin in Next.js."
+  ],
+  "budget_timeline": [
+    "Budget confirmed at $25k-$50k, timeline at 4 months.",
+    "Reaffirmed budget of $25k–$50k and a timeline of approximately 4 months."
+  ],
+  "open_questions": [
+    "Does the user have any tech stack preferences such as AWS vs GCP, Stripe, React/Next.js, etc., or should the recommendation be made by developers?",
+    "Clarification needed on whether a user with an active subscription gets access to all courses or only a subset with some courses remaining pay-per-course."
+  ]
+}

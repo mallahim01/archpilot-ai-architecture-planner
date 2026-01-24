@@ -1,0 +1,14 @@
+- Custom app with managed services recommended for supporting subscriptions, one-off purchases, entitlement logic, and enrollment-based instructor payouts.
+- Fallback option includes WordPress with LearnDash and Stripe for a quicker launch but with less flexibility in terms of instructor payout rules, hybrid monetization, and maintainability.
+- Admin dashboard entry point for managing platform activities.
+- Student dashboard entry point for accessing courses and managing subscriptions.
+- Instructor dashboard entry point for course creation and analytics.
+- Admin can manage courses & content, configure monetization options, and export reports.
+- Admin can override access grants, view and run payout cycles.
+- Students can resume course progress, manage billing, and share certificates.
+- Instructors can manage course content, view aggregated learner analytics, and see payout history.
+- Core features: Role-based access, subscription lifecycle and entitlements, course delivery, progress tracking, certificate issuance.
+- Instructor payout calculations based on enrollments per period, with admin payout runs.
+- Scalable and auditable payments layer structured around products, entitlements, ledger events, and payout cycles.
+- The platform will support multiple instructors and a growing student base.
+- Monetization will be available from day one, with options for subscription-based access.

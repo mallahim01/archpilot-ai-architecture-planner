@@ -1,0 +1,2 @@
+- Reiterated requirement to fit within a $50k–$80k budget and achieve launch in 8 months.
+- Budget is confirmed at $50k–$80k with a target launch timeframe of 8 months.

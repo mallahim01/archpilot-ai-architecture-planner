@@ -1,0 +1,2 @@
+- Clarification needed on whether platform will be web-only or include mobile/responsive components.
+- Are subscriptions paid to the platform with the platform revenue-sharing/payout instructors, or does each instructor get paid directly with a platform fee on top?

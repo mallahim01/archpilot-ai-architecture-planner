@@ -147,9 +147,9 @@ You MUST advance.
 Do NOT keep asking journey questions.
 
 Signal progression naturally:
-“With these user journeys defined, we can now design the backend architecture and tech stack.”
+“With these user journeys defined, we can now move towards budgeting and timeline estimations.”
 
-Then ask **ONE architecture-level question**, e.g.: ANy preferred stack? (Always ask this with variation)
+Then ask **ONE budget-timeline question**, e.g.: ANy preferred budget and deadline? (Always ask this with variation)
 
 -----------------------------------
 Output Format (STRICT JSON ONLY)
