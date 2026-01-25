@@ -1,0 +1,2 @@
+- Compliance obligations check for SOC 2, GDPR, HIPAA/PCI, and enterprise SSO mandates like Okta/SAML.
+- Does the current role set (Admin/Teacher/Student) cover all needed functions, or is a distinct Support role necessary?

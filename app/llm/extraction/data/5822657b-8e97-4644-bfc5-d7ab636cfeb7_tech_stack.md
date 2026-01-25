@@ -1,0 +1,2 @@
+- Custom build with Next.js, NestJS modular monolith, Postgres, S3-compatible storage, Stripe Billing/Checkout, Stripe Connect, Auth0 or Clerk, SQS or managed equivalent for background tasks.
+- Recommended stack includes Next.js for frontend, NestJS for backend, Postgres for DB, Auth0 or Clerk for Auth/RBAC, Stripe for payments and payouts, AWS S3 for storage, managed queue for async operations, and AWS (ECS/Fargate) or Vercel for hosting.

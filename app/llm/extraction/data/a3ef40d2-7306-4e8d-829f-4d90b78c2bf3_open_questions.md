@@ -1,0 +1,4 @@
+- Compliance obligations check: Does the user have any compliance obligations like SOC 2, GDPR-heavy requirements, HIPAA/PCI scope beyond Stripe, or enterprise SSO mandates (Okta/SAML)?
+- Clarification needed: Security-wise fit for the product - Standard, High, or Regulated-ERP.
+- Confirmation needed if a distinct Support role is necessary beyond Admin, Teacher, and Student roles for V1.
+- Which primary interface to design first: Student learning experience, Teacher course creation, or Admin moderation/ops?

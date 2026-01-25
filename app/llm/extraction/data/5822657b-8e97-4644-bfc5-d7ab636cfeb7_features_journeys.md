@@ -1,0 +1,17 @@
+- Primary build supports strong IAM, auditing, webhook safety, and clean modular boundaries.
+- Append-only audit log table with admin export for auditability.
+- Activity Logging & Audit Trails for security and compliance layer.
+- App-level RBAC handled by Auth0 or Clerk.
+- User roles for v1 confirmed: Admin, Teacher, Student.
+- Admin tasks include managing users, RBAC, verifying teachers, moderating courses/content, managing monetization controls, overseeing payouts/ledger, managing certificate templates/rules, notifications, audit logs, and platform analytics.
+- Teacher tasks include signup/login, onboarding/verification, creating/editing courses, setting pricing, publishing, versioning, viewing enrollments/engagement, managing earnings/payouts, and course analytics.
+- Student tasks include browsing the catalog, signing up/logging in, purchasing/subscribing to courses, managing billing/payment history/invoices, enrolling, tracking progress, downloading/sharing certificates, and managing profile/notification preferences.
+- RBAC + organization-wide permissions
+- Payments features: subscriptions, one-off purchases, invoices/receipts, refunds, chargebacks
+- Payouts to teachers and reporting
+- Course content/versioning + moderation workflow
+- Progress/completion validation + certificate issuance + public verification endpoint
+- Notifications (email/in-app) + audit logging
+- Admin journey includes RBAC management, teacher verification, course moderation, pricing oversight, payout controls, certificate management, notifications, audit and compliance, analytics
+- Teacher journey includes profile verification, course creation, pricing and publishing, student engagement, earnings and payouts, analytics
+- Student journey includes discovery, purchase/access, learning, progress tracking, completion, account management

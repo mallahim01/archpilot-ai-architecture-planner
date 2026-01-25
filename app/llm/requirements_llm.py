@@ -10,20 +10,21 @@ from app.llm.extraction.requirements_doc import generate_requirements_document
 from app.llm.extraction.user_journeys_doc import generate_user_journeys_document
 from app.llm.extraction.delivery_plan_doc import generate_delivery_plan_document
 from app.llm.extraction.risk_assumptions_doc import generate_risk_assumptions_document
+from app.llm.extraction.architecture_doc import generate_architecture_document
 
-async def generate_requirements_doc(
+async def generate_docs(
     job_id: str,
     chat_context: dict,
     rolling_summary: str,
     messages: list[dict],  # you said: oldest -> newest
+    doc_type: str,
 ) -> str:
     print("Inside job data extraction.........")
     print("Messages:")
     # print(messages)
     print("#########################")
     
-    extracted = ''
-
+  
     extracted = await extract_knowledge_from_chat(
         chat_context=chat_context,
         rolling_summary=rolling_summary or "",
@@ -46,32 +47,48 @@ async def generate_requirements_doc(
     print("Saved extraction files:")
     for k, p in paths.items():
         print(f"  {k}: {p}")
+    
+  
     print("JOB ID:")
     print(str(job_id))
-    print("Generating Founder brief:")
-    paths = await generate_founder_brief_document(job_id=str(job_id), model="gpt-4o")
-    print(paths["md_path"])
+    if doc_type=="req_doc":
+        print("req_doc...............")
+        print("Generating Founder brief:")
+        paths = await generate_founder_brief_document(job_id=str(job_id), model="gpt-4o")
+        print(paths["md_path"])
+        
+        print("Generating Requirement document:")
+        paths = await generate_requirements_document(
+        job_id=str(job_id),
+        model="gpt-4o",
+        debug_preview=True,
+        )
+        print("Saved:", paths["md_path"])
+        
+        print("Generating User Journyes:")
+        result = await generate_user_journeys_document(job_id=str(job_id), model="gpt-4o")
+        print(result["path"])
+        
+        print("Generating Delivery Plan:")
+        result = await generate_delivery_plan_document(job_id=str(job_id), model="gpt-4o")
+        print(result["path"])
+        
+        print("Generating Risk Assumptions:")
+        result = await generate_risk_assumptions_document(job_id=str(job_id), model="gpt-4o")
+        print(result["path"])
     
-    print("Generating Requirement document:")
-    paths = await generate_requirements_document(
-    job_id=str(job_id),
-    model="gpt-4o",
-    debug_preview=True,
+    if doc_type=="arch_doc":
+        print("ARCH doc..........")
+        paths = await generate_architecture_document(
+        job_id=str(job_id),
+        model="gpt-4o",
+        debug_preview=True,
     )
-    print("Saved:", paths["md_path"])
-    
-    print("Generating User Journyes:")
-    result = await generate_user_journeys_document(job_id=str(job_id), model="gpt-4o")
-    print(result["path"])
-    
-    print("Generating Delivery Plan:")
-    result = await generate_delivery_plan_document(job_id=str(job_id), model="gpt-4o")
-    print(result["path"])
-    
-    print("Generating Risk Assumptions:")
-    result = await generate_risk_assumptions_document(job_id=str(job_id), model="gpt-4o")
-    print(result["path"])
-    
+        print("Saved:", paths["md_path"])
+        ################
+        
+        # result = await generate_architecture_document(job_id=str(job_id), model="gpt-4o")
+        # print(result["path"])
 
     # Return JSON string for now (you’re storing it in DB artifact)
     return json.dumps(

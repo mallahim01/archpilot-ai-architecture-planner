@@ -1,0 +1,10 @@
+- Security posture set to High with maintainability focus.
+- Primary tech stack: Next.js for web, NestJS modular monolith for API, Postgres for core data, S3-compatible object storage for video/files, Stripe Billing/Checkout for payments and subscriptions, Stripe Connect for teacher payouts, managed authentication with Auth0 or Clerk with RBAC roles.
+- Security, Compliance & Trust Layer includes Secure Authentication (JWT/OAuth-based), Encrypted Data at Rest & In Transit, Role-Based Permissions, Secure Payment Handling (No card data storage), Activity Logging & Audit Trails.
+- US Compliance considerations include GDPR-aligned data handling principles, SOC-2 readiness, PCI-DSS compliance via payment providers, Privacy Policy & Terms Enforcement, Data retention and deletion policies.
+- Phase 1 focuses on core platform development (14–16 weeks): roles, courses, subscriptions, payouts, and certificates.
+- Phase 2 involves enhancements and optimization (8–12 weeks): analytics, UX polish, and performance tuning.
+- Platform has 3 primary roles: Admin, Teacher, Student
+- Admin acts as authority for governance, compliance, monetization oversight, quality control
+- Teachers are content creators publish courses, attract enrollments, earn revenue
+- Students consume educational content, track progress, earn certificates

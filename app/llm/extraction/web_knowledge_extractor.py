@@ -65,6 +65,7 @@ Rules:
 - Include every feature, action, workflow, role, screen, integration, constraint, assumption, pricing idea, timeline hint,
   edge-case, and non-functional requirement mentioned.
 - It is OK if items are long and contain full context.
+- Do not miss a single point, from AI or User, both are equally important, keep every small detail, your extracted details are very important and later be used.
 - Prefer including exact phrasing/details when possible.
 - If a category truly has nothing new in this batch, output [].
 - Do NOT output markdown fences/backticks. JSON only.

@@ -1,0 +1,56 @@
+{
+  "discovery": [
+    "Security posture set to High with maintainability focus.",
+    "Primary tech stack: Next.js for web, NestJS modular monolith for API, Postgres for core data, S3-compatible object storage for video/files, Stripe Billing/Checkout for payments and subscriptions, Stripe Connect for teacher payouts, managed authentication with Auth0 or Clerk with RBAC roles.",
+    "Security, Compliance & Trust Layer includes Secure Authentication (JWT/OAuth-based), Encrypted Data at Rest & In Transit, Role-Based Permissions, Secure Payment Handling (No card data storage), Activity Logging & Audit Trails.",
+    "US Compliance considerations include GDPR-aligned data handling principles, SOC-2 readiness, PCI-DSS compliance via payment providers, Privacy Policy & Terms Enforcement, Data retention and deletion policies.",
+    "Phase 1 focuses on core platform development (14–16 weeks): roles, courses, subscriptions, payouts, and certificates.",
+    "Phase 2 involves enhancements and optimization (8–12 weeks): analytics, UX polish, and performance tuning.",
+    "Platform has 3 primary roles: Admin, Teacher, Student",
+    "Admin acts as authority for governance, compliance, monetization oversight, quality control",
+    "Teachers are content creators publish courses, attract enrollments, earn revenue",
+    "Students consume educational content, track progress, earn certificates"
+  ],
+  "ui_ux": [
+    "Background jobs/queue for payouts sync, emails, certificate generation, and webhooks.",
+    "Frontend recommendation: Next.js for web app, marketing, and public certificate verification pages.",
+    "UX polish is part of Phase 2 enhancements, synchronized with analytics and performance tuning.",
+    "High-level screens to include: landing/marketing, course catalog, course detail, teacher profile, certificate verification URL",
+    "Auth screens: signup/in, email/phone verification, password reset, optional SSO",
+    "Student screens: onboarding, subscription management, checkout, purchase history, learning player, progress dashboard, certificates",
+    "Teacher screens: verification/KYC, course builder (modules/lessons/quizzes/assignments), media uploads, pricing, earnings/payouts, analytics",
+    "Admin screens: user/role management, teacher approval, course moderation, pricing rules, payout controls, certificate templates/rules, audit logs, platform analytics"
+  ],
+  "features_journeys": [
+    "Primary build supports strong IAM, auditing, webhook safety, and clean modular boundaries.",
+    "Append-only audit log table with admin export for auditability.",
+    "Activity Logging & Audit Trails for security and compliance layer.",
+    "App-level RBAC handled by Auth0 or Clerk.",
+    "User roles for v1 confirmed: Admin, Teacher, Student.",
+    "Admin tasks include managing users, RBAC, verifying teachers, moderating courses/content, managing monetization controls, overseeing payouts/ledger, managing certificate templates/rules, notifications, audit logs, and platform analytics.",
+    "Teacher tasks include signup/login, onboarding/verification, creating/editing courses, setting pricing, publishing, versioning, viewing enrollments/engagement, managing earnings/payouts, and course analytics.",
+    "Student tasks include browsing the catalog, signing up/logging in, purchasing/subscribing to courses, managing billing/payment history/invoices, enrolling, tracking progress, downloading/sharing certificates, and managing profile/notification preferences.",
+    "RBAC + organization-wide permissions",
+    "Payments features: subscriptions, one-off purchases, invoices/receipts, refunds, chargebacks",
+    "Payouts to teachers and reporting",
+    "Course content/versioning + moderation workflow",
+    "Progress/completion validation + certificate issuance + public verification endpoint",
+    "Notifications (email/in-app) + audit logging",
+    "Admin journey includes RBAC management, teacher verification, course moderation, pricing oversight, payout controls, certificate management, notifications, audit and compliance, analytics",
+    "Teacher journey includes profile verification, course creation, pricing and publishing, student engagement, earnings and payouts, analytics",
+    "Student journey includes discovery, purchase/access, learning, progress tracking, completion, account management"
+  ],
+  "tech_stack": [
+    "Custom build with Next.js, NestJS modular monolith, Postgres, S3-compatible storage, Stripe Billing/Checkout, Stripe Connect, Auth0 or Clerk, SQS or managed equivalent for background tasks.",
+    "Recommended stack includes Next.js for frontend, NestJS for backend, Postgres for DB, Auth0 or Clerk for Auth/RBAC, Stripe for payments and payouts, AWS S3 for storage, managed queue for async operations, and AWS (ECS/Fargate) or Vercel for hosting."
+  ],
+  "budget_timeline": [
+    "Custom modular monolith approach fits within $40–50k budget and 14–16 weeks timeline for Phase 1.",
+    "Budget: $40k–$50k; Timeline: Phase 1: 14–16 weeks, approach suggests maintainability-first.",
+    "Timeline consists of Phase 1 (14-16 weeks) and Phase 2 (8-12 weeks), with a mid-range budget of $40k–$50k."
+  ],
+  "open_questions": [
+    "Compliance obligations check for SOC 2, GDPR, HIPAA/PCI, and enterprise SSO mandates like Okta/SAML.",
+    "Does the current role set (Admin/Teacher/Student) cover all needed functions, or is a distinct Support role necessary?"
+  ]
+}

@@ -1,0 +1,13 @@
+- Implementation fits the 8–10 week timeline with small 'Policy & Consent' module in the Next.js/NestJS stack.
+- Budget: $25k–$75k and timeline: 8–10 weeks for implementing minimum SOC‑2 controls.
+- Custom build fits $25k–$75k budget and 8–10 weeks timeline.
+- Project fits within $25k–$75k budget and 8–10 week timeline for MVP.
+- Budget is $25k–$75k.
+- Timeline for MVP is 8–10 weeks.
+- The MVP is planned for an 8–10 weeks timeline with a mid-range budget.
+- Phase 2 enhancements/optimization planned for 4–6 weeks following the MVP.
+- Aiming for Phase 1 Core Platform MVP completion within 8–10 weeks.
+- No specific timeline or budget range has been provided for the Individual Course Purchase feature. The user preferences lean towards benefits for continuous learners.
+- Clarification or reiteration of timeline and budget pending: options provided for 4–6 weeks or up to 2–3 months; budget options provided for $10–25k, with emphasis on choosing between cheapest/fast MVP, balanced, or premium approach.
+- The user is considering a monthly subscription platform.
+- The assistant is inquiring about a rough timeline and budget range for monetization and access architecture, considering options from a fast MVP to a more premium approach.

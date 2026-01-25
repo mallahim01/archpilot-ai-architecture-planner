@@ -1,0 +1,43 @@
+- Primary recommended managed custom stack includes Next.js for frontend, NestJS for backend API, managed Postgres for data, managed OIDC for authentication with admin MFA, Stripe Checkout and PaymentIntents for payments.
+- Fallback platform route if needed includes Thinkific/Teachable for course delivery and checkout with minimal custom service for policy acceptance and audit export.
+- Retention service using NestJS cron/queue job to manage TTL and deletion/anonymization processes.
+- Policy & Consent module in NestJS and Next.js flow for policy acceptance enforcement.
+- Primary stack: Custom stack (Next.js + NestJS + Postgres) with Stripe Checkout for PCI‑DSS compliance.
+- Fallback stack: Platform (Thinkific/Teachable) with built-in payments for low PCI scope but less control.
+- SOC-2 readiness considerations include managed OIDC, MFA enforcement, least-privilege RBAC, audit events, immutable identifiers, CI/CD control, TLS encryption, secret management, vulnerability management, incident response, backup and DR, vendor management with DPAs and SOC reports.
+- Custom tech stack involves Next.js, NestJS, Postgres, managed OIDC, HTTP-only cookies, RBAC, Stripe Checkout.
+- Fallback tech stack includes Thinkific/Teachable for compliance tooling.
+- Primary stack direction: Custom modular monolith with Next.js (App Router) for frontend, NestJS (TypeScript, Clean Architecture) for backend, managed Postgres with encryption, Redis + BullMQ for cache/jobs, S3-compatible object storage with CDN for files/assets, HTTP-only cookie sessions for auth via managed OIDC/OAuth2, append-only audit_events table, Sentry + OpenTelemetry for observability, Stripe for payments.
+- Fallback: Thinkific/Teachable with minimal custom admin/audit overlay and Stripe.
+- Managed Postgres with encryption at rest and TLS connections.
+- S3-compatible object storage with server-side encryption and presigned uploads.
+- Recommended primary tech stack for scalability within budget/timeline: Next.js (App Router) for frontend, NestJS for backend with Clean Architecture, and Postgres for the database.
+- Async jobs and emails handled by Redis and BullMQ.
+- Asset storage via S3-compatible object storage and CDN.
+- Stripe as the payment processor.
+- Observability tools include Sentry and OpenTelemetry.
+- Audit trails managed through an append-only 'audit_events' table.
+- Primary tech stack involves Next.js (App Router), NestJS (TypeScript, Clean Architecture), Postgres, Redis, BullMQ, S3-compatible object storage, Stripe, and managed OIDC.
+- Fallback involves Thinkific/Teachable plus minimal customization.
+- Custom modular monolith tech stack includes Next.js, NestJS, Postgres, Redis, S3-compatible storage, Stripe, and observability tools like Sentry and OpenTelemetry.
+- Fallback option involves Thinkific/Teachable with a custom admin/audit layer if needed.
+- Long-term scalability strategy suggests starting with a modular monolith and selectively splitting services later.
+- Stack emphasized clean architecture: modular monolith using Next.js, NestJS, Postgres, Redis, Stripe, S3, Sentry, and OpenTelemetry.
+- Fallback stack: Teachable/Thinkific with minimal custom layer for admin governance/audits and unique workflows.
+- Primary tech stack includes Next.js (App Router), NestJS (APIs), Postgres, Redis + BullMQ, S3 + CDN, and Stripe.
+- Observability will be enhanced via Sentry and OpenTelemetry.
+- Recommended stack: Next.js for web/app, NestJS for backend with REST, Postgres for database, Redis for cache/jobs, S3-compatible object storage with CDN, Stripe for payments, and product analytics via PostHog or GA4.
+- Fallback stack: Teachable/Thinkific for course delivery, Stripe for payments, with small custom admin/analytics service.
+- Observability tools proposed: Sentry and OpenTelemetry metrics/logs.
+- Frontend: Next.js (React) + Tailwind
+- Backend: NestJS (Node/TypeScript) monolith API (modular)
+- Database: Managed PostgreSQL (AWS RDS/Supabase)
+- Auth/RBAC: Managed auth (Auth0/Clerk/Supabase Auth) with app-level RBAC
+- Storage: S3-compatible object storage for course assets
+- Payments/subscriptions: Stripe for subscriptions, coupons, invoices, receipts
+- Payouts: Stripe Connect Express or in-app 'read-only payout ledger'
+- Async jobs: Managed queue, e.g., BullMQ + Redis managed
+- Email/notifications: Postmark/SES + in-app notifications table
+- Audit trails: Append-only audit_events table + admin console views
+- Requirement for RBAC/ABAC permissions and audit logs.
+- Rate limits and secure media delivery (signed URLs/DRM-light) suggested for security.

@@ -1,0 +1,60 @@
+- Confirmation needed on implementation scope for policy changes: hard blocking (must accept latest Terms/Privacy before continuing) or soft blocking (banner + deadline).
+- Policy & Consent module to be implemented in the NestJS monolith with Next.js acceptance flow.
+- Consider implementing a hosted payment page to stay within SAQ A PCI scope instead of embedding card fields.
+- GDPR-aligned features include lawful basis transparency, data minimization, purpose limitation, storage limitation, accuracy, integrity/confidentiality, data subject rights (export, delete, rectification), and logging without personal data.
+- Role-Based Permissions (RBAC) with potential for custom roles per organization or fixed platform roles (Student/Instructor/Admin).
+- RBAC model: Users ↔ Roles (many-to-many) + Role ↔ Permissions (explicit strings like 'course.publish', 'user.suspend', 'content.moderate').
+- Maintain security at a Standard (Baseline) level with OAuth/OIDC and JWT.
+- Use of httpOnly cookies for web sessions instead of localStorage tokens.
+- RBAC for Admin/Instructor/Student roles, with Finance and Super Admin boundaries.
+- Primary recommended setup is a custom modular monolith.
+- Use of Next.js for web app and NestJS for API.
+- Postgres for core data, with an immutable audit_events table.
+- Redis and BullMQ for managing jobs like email, video processing, notifications, and exports.
+- S3-compatible object storage with a CDN for course media/assets.
+- Stripe for payment processing, keeping payout execution separate.
+- Auth system using managed OIDC and RBAC for different roles including Super Admin/Finance separation.
+- Observability integrated with Sentry and OpenTelemetry.
+- Fallback option includes using Thinkific/Teachable with minimal custom admin/audit layer.
+- Primary stack recommended involves Next.js (App Router) for web, NestJS modular monolith, Postgres for core data, Redis + BullMQ for background jobs, S3-compatible object storage + CDN for course assets, and Stripe for payments.
+- OpenTelemetry/Sentry for observability and immutable audit_events for traceability.
+- Redis + BullMQ proposed for async jobs including certificate issuance, emails, and analytics rollups.
+- Immutable audit_events table for observability and audit purposes.
+- The custom stack allows for scalable implementation of discussions, assessments, and analytics with proper role-based access and auditability.
+- Fallback option includes using Teachable/Thinkific and Stripe for a faster but less customizable launch.
+- Primary stack includes Redis queue for notifications, async jobs, and analytics rollups.
+- Backend event table (`audit_events` / `event_log`) for authoritative tracking.
+- Roles include courses, subscriptions, payouts, certificates.
+- Audit trails and admin console views are necessary for governance.
+- Platform-issues certificates to students upon successful course completion.
+- Students enroll via subscription or direct purchase.
+- Course publishing workflow: once approved, the course becomes available to students.
+- Admin role includes reviewing courses for quality, policy compliance, and completeness.
+- Course submission workflow: Courses created by teachers are submitted for admin review.
+- Teacher's activity: Teachers are responsible for creating course content, structure, and pricing.
+- Course Lifecycle & Governance
+- Configurable lifetime or fixed-duration access per course.
+- One-time payment option per course.
+- Individual Course Purchase is being discussed as a feature for continuous learners.
+- Subscription model where students pay a recurring monthly fee to access courses.
+- Student journey involves signing up, discovering courses, enrolling, learning, engaging in discussions, tracking progress, managing account, and seeking support.
+- Certificates are earned based on completion criteria.
+- Student actions include browsing courses, enrolling, consuming lessons, participating in discussions, submitting assessments, and managing profile.
+- Instructor capabilities should support: Creating/updating drafts, versioning, and responding to review notes.
+- Instructors may have the ability to manage course pricing/discount proposals, though it requires admin approval.
+- Media management by instructors includes uploading to object storage and optional captions/transcripts.
+- Instructors can communicate with students through announcements and messages.
+- Instructor role is central, focusing on course creation/publishing and revenue from student participation.
+- Admin role capabilities: governance and compliance, quality control/content governance, moderation/trust & safety, monetization oversight, platform operations.
+- Admin cannot execute payouts, manage global billing/payment changes, or make security-critical changes.
+- Suggested role permissions: Admin manages operations, Finance handles payouts and tax exports, Super Admin handles security, integrations, and role model changes.
+- Question about whether Admin should approve/reject course publishing directly or if a separate Reviewer/QA role is needed.
+- Roles outlined: Student, Instructor, Admin, Reviewer/Moderator (combined), Finance (potentially Admin initially).
+- Students can browse, purchase courses or subscriptions, learn, take assessments, and earn certificates.
+- Instructors can create/publish courses, manage cohorts/content, view analytics, and receive payouts.
+- Admins to approve/police content, manage categories/tags, handle disputes/refunds, oversee payouts/tax settings, and manage certificates/credential rules.
+- Reviewers/Moderators handle delegated content review and trust/safety tasks.
+- Instructors to confirm whether they publish under their own accounts or belong to organizations (affecting governance model).
+- Students can browse catalog, purchase/subscribe, learn (video/lessons), and track progress with optional certificates.
+- Teachers/Instructors can create courses (modules/lessons), upload video/resources, set pricing/eligibility, and view earnings/analytics.
+- Admins can approve/feature courses, manage users, payments, refunds, content moderation, and tax/VAT settings.

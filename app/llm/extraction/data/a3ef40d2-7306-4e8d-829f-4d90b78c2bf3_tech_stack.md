@@ -1,0 +1,4 @@
+- Primary tech stack includes Next.js (web), NestJS modular monolith (API), Postgres, S3-compatible storage, and managed Auth via Auth0 or Clerk.
+- Asynchronous/background jobs to be handled by SQS or a managed equivalent.
+- Primary stack includes Next.js, NestJS, Postgres, Auth0/Clerk, Stripe, AWS S3, SQS, Postmark/SendGrid, AWS hosting.
+- Fallback involves using an LMS platform with custom governance, teacher verification, payouts, and certificate verification.

@@ -16,7 +16,7 @@ from app.crud_jobs import get_job_owned
 from app.schemas import ChatResponseIn, ChatResponseOut
 from app.llm.llm import call_llm
 from app.llm.web_runner import web_call_stage_llm
-from app.llm.web_stages import web_next_stage
+from app.llm.web_stages import web_next_transition
 from fastapi import BackgroundTasks, HTTPException
 import uuid
 
@@ -31,7 +31,7 @@ app = FastAPI(title="FastAPI Chat Backend")
 @app.on_event("startup")
 async def startup():
     async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)   # ⚠️ DEV ONLY, to re-initialize db
+        # await conn.run_sync(Base.metadata.drop_all)   # ⚠️ DEV ONLY, to re-initialize db
         await conn.run_sync(Base.metadata.create_all)
 
 # @app.on_event("startup")
@@ -197,6 +197,7 @@ async def response_route(
 
     user_msg = payload.message
     print("User message......")
+    print(stage)
 
     # store user message
     await crud.add_message(db, current_user.id, chat.id, "user", user_msg, meta={"stage": stage})
@@ -224,39 +225,70 @@ async def response_route(
 
     # read summary after update
     updated_summary = await crud.get_chat_summary(db, current_user.id, chat.id)
-
+    
+    # updated_summary=''
+    # advance=True
+    # assistant_text='testing text.........'
 
     # deterministic stage advance
+    # deterministic stage advance
     if advance:
-        nxt = web_next_stage(stage)
-        await crud.set_chat_assignment(db, current_user.id, chat.id, nxt)
-        
+        print("Current Stage:")
+        print(stage)
+        transition = web_next_transition(stage)
+        print("Next Transition.......")
+        print(transition)
 
-        if nxt == "web_generate_requirements":
-            # ✅ 1) Reuse if already generated
-            existing_job_id = getattr(chat, "latest_requirements_job_id", None)
-            if existing_job_id and requirements_bundle_exists(str(existing_job_id)):
-                return ChatResponseOut(
-                    response="✅ I already generated your documents earlier. You can open them now.",
-                    summary=updated_summary.summary if updated_summary else None,
-                    action="generate_requirements",
-                    action_status="ready",  # or "done"
-                    job_id=existing_job_id,
-                )
+        # Always move stage forward first (prevents repeats)
+        await crud.set_chat_assignment(db, current_user.id, chat.id, transition.next_stage)
 
-            # ✅ 2) Otherwise create job + run
-            print("Creating a job.....")
-            job = await create_job(db, current_user.id, chat.id, "requirements_doc")
-            background_tasks.add_task(run_requirements_job, current_user.id, chat.id, job.id)
-            print("JOB ID:", job.id)
+        # If this step triggers a job, enqueue it once
+        if transition.action == "requirement_doc":
+            print("Inside requirment doc job creation")
+            job = await create_job(db, current_user.id, chat.id, "requirement_doc")
+            background_tasks.add_task(run_requirements_job, current_user.id, chat.id, job.id, "requirement_doc")
 
             return ChatResponseOut(
-                response="Perfect — I’m preparing your requirement document now. It will appear shortly.",
+                response="Perfect — I’m preparing your requirement documents now. They’ll appear shortly.",
                 summary=updated_summary.summary if updated_summary else None,
                 action="generate_requirements",
                 action_status="queued",
                 job_id=job.id,
             )
+
+        if transition.action == "architecture_doc":
+            print("inside architecture doc job creation")
+            job = await create_job(db, current_user.id, chat.id, "architecture_doc")
+            background_tasks.add_task(run_requirements_job, current_user.id, chat.id, job.id, "architecture_doc")
+
+            return ChatResponseOut(
+                response="Great — I’m generating your architecture summary now. It will appear shortly.",
+                summary=updated_summary.summary if updated_summary else None,
+                action="generate_architecture",
+                action_status="queued",
+                job_id=job.id,
+            )
+
+    # if advance:
+    #     nxt = web_next_stage(stage)
+    #     await crud.set_chat_assignment(db, current_user.id, chat.id, nxt)
+        
+
+    #     if nxt == "web_generate_requirements":
+
+    #         # ✅ 2) Otherwise create job + run
+    #         print("Creating a job.....")
+    #         job = await create_job(db, current_user.id, chat.id, "requirements_doc")
+    #         background_tasks.add_task(run_requirements_job, current_user.id, chat.id, job.id)
+    #         print("JOB ID:", job.id)
+
+    #         return ChatResponseOut(
+    #             response="Perfect — I’m preparing your requirement document now. It will appear shortly.",
+    #             summary=updated_summary.summary if updated_summary else None,
+    #             action="generate_requirements",
+    #             action_status="queued",
+    #             job_id=job.id,
+    #         )
 
     return ChatResponseOut(
         response=assistant_text,

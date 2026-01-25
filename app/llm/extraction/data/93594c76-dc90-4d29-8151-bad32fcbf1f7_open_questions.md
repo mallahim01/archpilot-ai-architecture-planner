@@ -1,0 +1,29 @@
+- Decision pending on whether to implement hard blocking or soft blocking for policy changes.
+- For instructor account deletion, do you prefer Option A (unpublish/remove content) or Option B (transfer content to platform)?
+- Do you want “hard blocking” or “soft blocking” for Privacy Policy & Terms acceptance?
+- Are you committed to a hosted payment page (Stripe Checkout) to remain SAQ A/minimal PCI scope, rather than embedding card fields?
+- Are you aiming for SOC 2 Type I soon, or just building 'Type II-ready' foundations for later?
+- Which GDPR posture is preferred for MVP: (A) 'best-effort GDPR principles' or (B) 'strict GDPR ops'?
+- Clarification of US compliance focus: privacy (CCPA-like), payments (PCI), or education (FERPA-like).
+- Do you want audit trails to be Admin-only, or also visible to Instructors for their own course actions?
+- Do you expect subscriptions/recurring billing, or one-time course purchases only for MVP?
+- Should permissions be fixed platform roles or custom roles per organization?
+- Decision on managed OIDC preference or the consideration of fully self-hosted authentication solutions.
+- Final decision needed on Security fit: Standard, High, or Regulated-ERP.
+- Final security classification needed: Standard / High / Regulated-ERP. If not specified, default assumption will be High.
+- Security alignment question: Standard, High, or Regulated-ERP?
+- Security posture decision is needed: Standard, High, or Regulated-ERP.
+- Target timeline and budget range for the project still need to be confirmed.
+- Clarification needed on the target timeline and budget for the build.
+- What’s the target timeline for the course lifecycle & governance work?
+- What is the rough budget range for the course lifecycle & governance work (e.g., <$10k, $10–50k, $50k+)?
+- The timeline and budget range for the Individual Course Purchase feature remains undefined. Clarification needed whether the build should be approached as cheapest/fast MVP, balanced, or premium.
+- What timeline are you aiming for the monthly subscription platform?
+- What budget range are you roughly targeting for the platform?
+- Would you prefer a fast MVP, a balanced approach, or a premium delivery mode for monetization and access architecture?
+- Should certificate issuance be automatic based on completion rules or triggered by Instructor/Admin?
+- For v1, can Instructors publish courses directly, or must all courses go through Admin/Moderator approval before going live?
+- Should the Admin be allowed to directly approve or reject course publishing, or should there be a separate Reviewer/QA role?
+- Will instructors be publishing under their own independent creator accounts (marketplace model) or belong to organizations/schools with separate branded spaces (true multi-tenant “sub-portals”)?
+- Do you want instructors to be able to create private/unlisted courses or should all be public in the catalog once approved?
+- Is the platform designed as a single-brand organization for instructors or a multi-instructor marketplace with individual storefronts and payouts?

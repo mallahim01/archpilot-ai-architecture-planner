@@ -1,0 +1,66 @@
+{
+  "discovery": [
+    "Proceeding with the balanced architecture for the Next.js + NestJS modular monolith + Postgres + Stripe Billing/Checkout + Stripe Connect stack under a High security posture.",
+    "Confirmed balanced architecture with equal priority across security, maintainability, scalability, UX, and cost/timeline.",
+    "Locked in: Security posture set to High for the project.",
+    "Primary tech stack confirmed: Next.js (web) + NestJS (modular monolith API) + Postgres.",
+    "Auth solution options: Auth0 or Clerk, both MFA-ready and RBAC-friendly.",
+    "Stripe Billing/Checkout and Stripe Connect will be used for payments and teacher payouts.",
+    "S3-compatible object storage for video and file storage.",
+    "SQS/worker for asynchronous jobs, including encoding hooks, emails, certificate issuance, payout workflows.",
+    "Append-only audit log table with admin export for auditability.",
+    "Fallback option: LMS platform with a custom governance layer for verification, moderation, certificates, and payout controls.",
+    "Security, Compliance & Trust Layer requirements discussed.",
+    "Security baseline includes Secure Authentication (JWT/OAuth-based), Encrypted Data at Rest & In Transit, Role-Based Permissions, Secure Payment Handling (No card data storage), Activity Logging & Audit Trails.",
+    "US Compliance involves GDPR-aligned data handling, SOC-2 readiness, PCI-DSS compliance via payment providers, Privacy Policy & Terms Enforcement, Data retention and deletion policies.",
+    "User has no preferred tech stack and is open to recommendations.",
+    "Preferred budget: mid-range $40k to $50k.",
+    "Preference toward long-term maintainability over shortcuts.",
+    "The platform will include three primary roles for V1: Admin, Teacher (Instructor), and Student.",
+    "Support will be managed by Admin in V1.",
+    "Admin acts as the platform authority, responsible for governance, compliance, monetization oversight, and quality control.",
+    "Teachers are content creators who publish courses and earn revenue.",
+    "Students consume educational content and earn certificates upon successful completion.",
+    "User wants the entire platform to be ready at launch with no priority on section order.",
+    "The platform will support both monthly subscriptions unlocking all courses and individual course purchases.",
+    "System will be designed as a multi-role, secure, and scalable SaaS platform."
+  ],
+  "ui_ux": [
+    "User prefers a clean, modern, professional interface with a light theme and neutral or premium accent colors.",
+    "User emphasizes a dashboard-centric experience for all roles with clear separation between admin, teacher, and student views.",
+    "UI should have minimal onboarding friction and be mobile-responsive and tablet-friendly.",
+    "Design is intended for scalability and feature expansion.",
+    "High-level screens identified for launch: Public (landing, course catalog, course detail, teacher profile, certificate verification), Auth (sign up/in, email/phone verification, password reset, optional SSO), Student (onboarding, subscription management, checkout, purchases/history, learning player, dashboard, certificates), Teacher (verification/KYC, course builder, media uploads, pricing, earnings/payouts, analytics), Admin (user/role management, teacher approval, course moderation, pricing rules, payout controls, certificate templates/rules, audit logs, platform analytics).",
+    "The platform will be web-first and dashboard-style."
+  ],
+  "features_journeys": [
+    "The feature set includes payouts via Stripe Connect, teacher verification, certificate issuance, and verification URLs.",
+    "Admin-grade audit logs and exports are part of the system requirements.",
+    "Custom build recommended for multi-role RBAC, payments, subscriptions, payouts, audit logs, certificate verification, and analytics.",
+    "Primary approach involves Next.js for frontend, NestJS for backend, Postgres for database, Auth0 or Clerk for authentication, Stripe for payments, S3 for storage, SQS + workers for async jobs, Postmark/SendGrid for notifications, and AWS for hosting.",
+    "Phase 1 - Core Platform (MVP): 14–16 weeks; includes roles, courses, subscriptions, payouts, certificates.",
+    "Phase 2 - Enhancements & Optimization: 8–12 weeks; includes analytics, UX polish, performance tuning.",
+    "Admin journey includes governance & RBAC, teacher verification, course moderation, monetization oversight, payout controls, certificate management, notifications, audit & compliance, and analytics.",
+    "Teacher journey includes profile & verification, course creation, pricing & publishing, student engagement, earnings & payouts, and analytics.",
+    "Student journey includes discovery, purchase/access, learning, progress tracking, completion & certificates, and account management.",
+    "Core backend features: RBAC + org-wide permissions, payments (subscriptions and one-off purchases), payouts to teachers, course content/versioning + moderation workflow, progress/completion validation + certificate issuance, notifications, and audit logging.",
+    "Admin Features:\n- Platform-Wide Dashboard\n- User & Role Management\n- Teacher Verification & Approval\n- Course Review & Moderation\n- Subscription & Pricing Control\n- Revenue & Payout Oversight\n- Certificate Templates & Rules\n- Reports & Analytics\n- Content Policy Enforcement\n- Security & Compliance Controls\n\nTeacher Features:\n- Teacher Profile & Verification\n- Course Creation & Editing\n- Content Upload (Video, Docs, Resources)\n- Course Pricing Configuration\n- Enrollment & Performance Insights\n- Earnings Dashboard\n- Payout Requests\n- Course Update & Versioning\n\nStudent Features:\n- Account Registration & Login\n- Course Discovery & Search\n- Subscription Management\n- Course Purchase Flow\n- Learning Dashboard\n- Progress Tracking\n- Completion Validation\n- Certificate Download & Verification\n- Payment History\n\nPlatform & System Features:\n- Role-Based Access Control (RBAC)\n- Secure Payment Processing\n- Subscription Management\n- Automated Payout System\n- Notifications (Email / In-App)\n- Audit Logs\n- Certificate Verification URLs\n- API-First Architecture"
+  ],
+  "tech_stack": [
+    "Primary tech stack includes Next.js (web), NestJS modular monolith (API), Postgres, S3-compatible storage, and managed Auth via Auth0 or Clerk.",
+    "Asynchronous/background jobs to be handled by SQS or a managed equivalent.",
+    "Primary stack includes Next.js, NestJS, Postgres, Auth0/Clerk, Stripe, AWS S3, SQS, Postmark/SendGrid, AWS hosting.",
+    "Fallback involves using an LMS platform with custom governance, teacher verification, payouts, and certificate verification."
+  ],
+  "budget_timeline": [
+    "Budget: mid-range $40k to $50k.",
+    "Phase 1 - Core Platform (MVP): 14–16 weeks.",
+    "Phase 2 - Enhancements & Optimization: 8–12 weeks."
+  ],
+  "open_questions": [
+    "Compliance obligations check: Does the user have any compliance obligations like SOC 2, GDPR-heavy requirements, HIPAA/PCI scope beyond Stripe, or enterprise SSO mandates (Okta/SAML)?",
+    "Clarification needed: Security-wise fit for the product - Standard, High, or Regulated-ERP.",
+    "Confirmation needed if a distinct Support role is necessary beyond Admin, Teacher, and Student roles for V1.",
+    "Which primary interface to design first: Student learning experience, Teacher course creation, or Admin moderation/ops?"
+  ]
+}

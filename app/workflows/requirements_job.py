@@ -6,13 +6,13 @@ from app.db import async_session_maker
 from app import crud
 from app.crud_jobs import set_job_status
 from app.crud_artifacts import upsert_artifact
-from app.llm.requirements_llm import generate_requirements_doc
+from app.llm.requirements_llm import generate_docs
 
 
 ARTIFACT_TYPE = "requirements_doc"
 
 
-async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: uuid.UUID) -> None:
+async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: uuid.UUID, job_type : str) -> None:
     async with async_session_maker() as db:  # type: AsyncSession
         try:
             # Safety: ensure chat belongs to this user
@@ -52,13 +52,28 @@ async def run_requirements_job(user_id: uuid.UUID, chat_id: uuid.UUID, job_id: u
             # )
             
             payload_messages = [{"role": m.role, "content": m.content} for m in reversed(messages)]  # oldest->newest
-
-            doc_md = await generate_requirements_doc(
-                job_id=str(job_id),
-                chat_context=ctx_obj,
-                rolling_summary=(summary_row.summary if summary_row else ""),
-                messages=payload_messages,
-            )
+            print("Inside job function..............")
+            print(job_type)
+            doc_md=''
+            if job_type=='requirement_doc':
+                print("Generating requirement doc.....................")
+                doc_md = await generate_docs(
+                    job_id=str(job_id),
+                    chat_context=ctx_obj,
+                    rolling_summary=(summary_row.summary if summary_row else ""),
+                    messages=payload_messages,
+                    doc_type='req_doc'
+                )
+                
+            elif job_type=="architecture_doc":
+                print("Generate architecture doc.............")
+                doc_md = await generate_docs(
+                    job_id=str(job_id),
+                    chat_context=ctx_obj,
+                    rolling_summary=(summary_row.summary if summary_row else ""),
+                    messages=payload_messages,
+                    doc_type='arch_doc'
+                )
 
             
          

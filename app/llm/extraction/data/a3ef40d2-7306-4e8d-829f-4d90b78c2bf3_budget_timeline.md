@@ -1,0 +1,3 @@
+- Budget: mid-range $40k to $50k.
+- Phase 1 - Core Platform (MVP): 14–16 weeks.
+- Phase 2 - Enhancements & Optimization: 8–12 weeks.

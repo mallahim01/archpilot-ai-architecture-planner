@@ -1,0 +1,75 @@
+- User confirmed the preference for a managed custom stack approach, aligning with the existing budget of $25k–$75k and 8–10 week timeline.
+- Security posture confirmed as Standard.
+- Data retention policy for MVP: account/profile data retained while active and deletion workflow post-request, instructor-owned drafts/assets retained until deleted or account deletion, published course artifacts retained while course is offered, learning records retained 24 months post-last activity, certificates retained 5–7 years, support tickets/moderation reports retained 12–24 months, audit logs retained 180 days (with potential for 1–2 years for SOC2), auth/security logs retained 90–180 days, and payment ledger retained 7 years without storing card data.
+- Deletion modes: user-initiated account deletion involves login disabling, session revocation, marking account as pending deletion, hard-delete or anonymization within 30 days, admin-initiated deletion/suspension follows additional audit logging, and legal/finance holds result in restricted/minimized data.
+- Content ownership rule options for instructor account deletion: Option A - remove/unpublish content with students retaining access for 90 days; Option B - transfer content to platform ownership, required clear terms.
+- Implementation notes: Retention service using NestJS cron/queue job for TTL, delete/anonymize process and logging lifecycle steps; soft-delete with hard-delete/anonymization on SLA.
+- Fallback option for Thinkific/Teachable: Use built-in retention/deletion controls for user accounts/content with minimal external policy_acceptances and payment_events mirror.
+- Privacy Policy & Terms enforcement with versioned document storing, write-once acceptance records per user, API/UI gating requiring acceptance pre-enrollment/purchase, role coverage, admin UI for new version publishing, GDPR export alignment, and retention policy adherence.
+- Fallback platform enforcement using built-in controls for Terms acceptance.
+- PCI‑DSS is handled primarily by keeping you out of cardholder-data scope using Stripe-hosted pages, staying in SAQ A scope, never storing PAN/CVC, only storing Stripe customer/payment intent IDs and receipts, with webhook verification.
+- SOC-2 readiness should include access control, logging/auditing, CI/CD change control, backup/restore, incident process, and vendor management from day 1 on the custom stack.
+- GDPR principles implemented without enterprise compliance build.
+- US compliance (high level) involves privacy-focused approach similar to CCPA.
+- For Activity Logging & Audit Trails under Standard security, a two-layer approach is recommended: (1) operational logs for debugging/monitoring and (2) application audit events for 'who did what, when' inside the product.
+- Primary (recommended) audit events: user/auth events (login/logout, role changes), content governance (course create/edit, submit-for-review, approve/reject/publish/unpublish), moderation actions (flags, takedowns), enrollment/purchase state changes, certificate issuance, and admin/support actions.
+- Audit events stored in an append-only audit_events table in Postgres, written from NestJS via a dedicated AuditService + guards/interceptors.
+- Audit events fields include actor_id, actor_role, action, entity_type/id, before/after (redacted diffs), request_id/correlation_id, ip, user_agent, timestamp, tenant/org.
+- Privacy in audit logs: avoid storing sensitive payloads, store references/IDs + redacted diffs.
+- Access to audit logs: Admin/Super Admin read-only views + filters; optional CSV export.
+- Retention of audit logs: 90–180 days in DB for MVP; potential extension or archiving to object storage.
+- Fallback audit trail using Thinkific/Teachable with minimal custom logs.
+- Secure payment handling proposed with zero card data storage using Stripe. Primary: Custom modular monolith with Stripe Checkout or Payment Links; Embedded experience with Stripe Elements + PaymentIntents.
+- Data stored for payment handling includes customer_id, subscription_id, payment_intent_id, product/price IDs, invoice/receipt links, and webhook event IDs.
+- Webhooks: NestJS webhook endpoint with signature verification, idempotency keys, immutable payment_events ledger, mapping to enrollments.
+- Access control for payment views: RBAC for admin/instructors, students read-only receipt view.
+- Fallback for payment handling using Thinkific/Teachable for checkout, subscriptions, taxes; minimal custom around course content/SSO.
+- Encrypted data at rest and in transit required under Security: Standard for the product. No additional formal compliance required (SOC2/ISO, HIPAA/PCI, etc.).
+- Secure Authentication to be JWT/OAuth-based, fitting Standard (Baseline) security posture.
+- Preference for managed OIDC over self-hosted to reduce operational overhead.
+- The platform will focus on a Security, Compliance & Trust Layer.
+- Plan for a custom build with a high-security focus, unless regulated.
+- Budget range is $25k to $75k.
+- Timeline for MVP is 8-10 weeks.
+- User prefers long-term maintainability over shortcuts for LMS development.
+- Scalability is prioritized by keeping Phase 1 as a modular monolith with managed infrastructure.
+- Clean architecture emphasized for modular monolith MVP and scalability.
+- Proposed primary stack: Next.js (App Router) for frontend, NestJS (TypeScript) as backend following clean architecture boundaries.
+- Proposed Primary Stack Details: Domain (entities/use-cases) → Application (services/ports) → Infrastructure (DB/Stripe/S3) → Interfaces (REST/GraphQL/controllers).
+- For the LMS marketplace MVP (8–10 weeks), a custom 'modular monolith' approach is recommended.
+- The suggested stack includes a frontend using Next.js, a backend with NestJS API (TypeScript), and a Postgres database for core data handling.
+- Redis with BullMQ is proposed for job processing including video processing hooks, emails, certificate issuing, and analytics rollups.
+- Assets will be managed using S3-compatible object storage with CDN integration.
+- Stripe will handle payment processing, with potential future integration of Stripe Connect for instructor payouts.
+- Observability and traceability to be ensured via Sentry, OpenTelemetry, and a dedicated audit log table.
+- Analytics, UX polish, performance tuning discussed for Phase 2 enhancements/optimization at 4–6 weeks.
+- Primary stack (recommended): Custom, performance-friendly monolith including Next.js, NestJS, Postgres, Redis, S3-compatible storage, Stripe, and product analytics.
+- Fallback stack for cost/time pressure: Platform-first using Teachable/Thinkific with Stripe and minimal custom service.
+- Security alignment question raised: Standard, High, or Regulated-ERP?
+- Phase 2 enhancements timeline: 4–6 weeks.
+- Phase 1 MVP is planned for 8–10 weeks with features including roles, courses, subscriptions, payouts, and certificates.
+- Custom build with managed services recommended to avoid platform constraints.
+- Platform-issued certificates are provided upon successful course completion, not by individual teachers.
+- Student progress is tracked.
+- Once a course is approved, it is published and becomes available to students.
+- Admin reviews courses for quality, policy compliance, and completeness.
+- Course submission process: Courses are submitted for admin review.
+- Instructor creation of courses: Teacher creates content, structure, and pricing for a course.
+- User mentioned 'lifetime or fixed-duration access (configurable)' for courses.
+- User clarified 'one-time payment per course.'
+- All published and approved courses are unlocked under a subscription model.
+- Students pay a recurring monthly fee.
+- Platform issues certificates, not external accreditation.
+- Student can self-enroll or purchase courses directly.
+- Admin acts as platform authority for governance, compliance enforcement, monetization oversight, and quality control with strong auditability.
+- Admin cannot manage direct control of payout rails, global billing/payment provider changes, or security-critical changes.
+- The platform is a multi-tenant, multi-role LMS-style SaaS with governance and financial/certification structures.
+- System designed as multi-role, secure, scalable SaaS with centralized administration, structured content governance, automated payouts, and platform-issued certifications.
+- Discussed building a full-scale online teaching and learning platform (LMS-style) for instructors to publish courses and students to access via monthly subscription or à-la-carte purchases.
+- Considering a web-first product with three core roles: Students, Teachers/Instructors, Admin.
+- Course structure includes: course → sections/modules → lessons (video, text, files, quizzes) with drip/locking rules.
+- Commerce strategies involve: subscriptions, one-time purchases, coupons, refunds, invoices/receipts, entitlements/access control.
+- Learning experience features: player, downloads/attachments, progress tracking, bookmarks, notes, discussions/Q&A (optional).
+- Creator tooling includes: course builder, media management, previews, publishing workflow, pricing configuration.
+- Operations encompass: reporting, roles/permissions, audit logs, support tooling.
+- Key architectural/UX decision: single-brand organization for instructors or multi-instructor marketplace with individual storefronts and payouts.

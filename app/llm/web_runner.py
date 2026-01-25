@@ -6,6 +6,9 @@ from app.web_llm_prompts.web_ui_features import WEB_UI_FEATURES_SYSTEM
 from app.web_llm_prompts.web_user_journeys import WEB_USER_JOURNEYS_SYSTEM
 from app.web_llm_prompts.web_tech_stack import WEB_TECH_STACK_SYSTEM
 from app.web_llm_prompts.web_budget_timeline import WEB_BUDGET_TIMELINE_SYSTEM
+from app.web_llm_prompts.web_post_arch_discussion import WEB_POST_ARCH_DISCUSSION_SYSTEM
+from app.web_llm_prompts.web_architecture_finalization import WEB_ARCHITECTURE_FINALIZATION_SYSTEM
+
 # client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # if not os.getenv("OPENAI_API_KEY"):
 #     raise ValueError("OPENAI_API_KEY is not set")
@@ -24,6 +27,8 @@ SYSTEM_BY_STAGE = {
     "web_user_journeys": WEB_USER_JOURNEYS_SYSTEM,
     "web_budget_timeline": WEB_BUDGET_TIMELINE_SYSTEM,
     "web_tech_stack": WEB_TECH_STACK_SYSTEM,
+    "web_architecture_finalization":WEB_ARCHITECTURE_FINALIZATION_SYSTEM,
+    "web_post_arch_discussion":WEB_POST_ARCH_DISCUSSION_SYSTEM,
 }
 
 def web_call_stage_llm(stage: str, payload: dict) -> dict:

@@ -1,0 +1,24 @@
+- Proceeding with the balanced architecture for the Next.js + NestJS modular monolith + Postgres + Stripe Billing/Checkout + Stripe Connect stack under a High security posture.
+- Confirmed balanced architecture with equal priority across security, maintainability, scalability, UX, and cost/timeline.
+- Locked in: Security posture set to High for the project.
+- Primary tech stack confirmed: Next.js (web) + NestJS (modular monolith API) + Postgres.
+- Auth solution options: Auth0 or Clerk, both MFA-ready and RBAC-friendly.
+- Stripe Billing/Checkout and Stripe Connect will be used for payments and teacher payouts.
+- S3-compatible object storage for video and file storage.
+- SQS/worker for asynchronous jobs, including encoding hooks, emails, certificate issuance, payout workflows.
+- Append-only audit log table with admin export for auditability.
+- Fallback option: LMS platform with a custom governance layer for verification, moderation, certificates, and payout controls.
+- Security, Compliance & Trust Layer requirements discussed.
+- Security baseline includes Secure Authentication (JWT/OAuth-based), Encrypted Data at Rest & In Transit, Role-Based Permissions, Secure Payment Handling (No card data storage), Activity Logging & Audit Trails.
+- US Compliance involves GDPR-aligned data handling, SOC-2 readiness, PCI-DSS compliance via payment providers, Privacy Policy & Terms Enforcement, Data retention and deletion policies.
+- User has no preferred tech stack and is open to recommendations.
+- Preferred budget: mid-range $40k to $50k.
+- Preference toward long-term maintainability over shortcuts.
+- The platform will include three primary roles for V1: Admin, Teacher (Instructor), and Student.
+- Support will be managed by Admin in V1.
+- Admin acts as the platform authority, responsible for governance, compliance, monetization oversight, and quality control.
+- Teachers are content creators who publish courses and earn revenue.
+- Students consume educational content and earn certificates upon successful completion.
+- User wants the entire platform to be ready at launch with no priority on section order.
+- The platform will support both monthly subscriptions unlocking all courses and individual course purchases.
+- System will be designed as a multi-role, secure, and scalable SaaS platform.
