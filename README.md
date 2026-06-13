@@ -1,6 +1,6 @@
-# Architecture Product
+# ArchPilot AI
 
-Architecture Product is a concept-stage backend for an AI-assisted software architecture planning product. The system guides a user through a structured discovery conversation, captures requirements in stages, maintains durable conversation context, and generates architecture-ready requirement documentation.
+ArchPilot AI is a concept-stage backend for an AI-assisted software architecture planning product. The system guides a user through a structured discovery conversation, captures requirements in stages, maintains durable conversation context, and generates architecture-ready requirement documentation.
 
 The product idea is simple: a user describes a product they want to build, the assistant asks focused follow-up questions, captures product scope, roles, user journeys, UI signals, integrations, and tech-stack direction, then produces a detailed requirements document that can be used as the foundation for system architecture and implementation planning.
 
